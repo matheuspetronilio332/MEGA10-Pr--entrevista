@@ -1,0 +1,196 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* GERAL */
+body {
+    min-height: 100vh;
+    background: #fff;
+    user-select: none;
+}
+
+
+/* TOPO */
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-resolution: from-image;
+    image-rendering: optimizeQuality;
+    
+}
+
+
+
+.fundo-esquerdo {
+    background-color: #2f6ee5;
+    position: absolute;
+    width: 100%;
+}
+
+.fundo-direito {
+    background-color: #2f6ee5;
+}
+
+/* CONTEÚDO */
+.content {
+    max-width: 600px;
+    margin: -20px auto 30px;
+    padding: 60px 20px;
+}
+
+/* INTRO */
+.intro h1 {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.mega {
+    color: #f5b400;
+}
+
+.subtitle {
+    font-size: 1rem;
+    text-align: center;
+    color: #555;
+    margin: 12px 0 18px;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ccc, transparent);
+}
+
+/* BOAS VINDAS */
+.welcome {
+    text-align: center;
+    margin: 24px 0;
+}
+
+.welcome h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+/* PERGUNTA */
+.question {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+/* BOTÕES */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.action {
+    border: none;
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.action a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.action:hover {
+    transform: scale(1.02);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.action img {
+    width: 28px;
+}
+
+.action a span {
+    font-size: 0.95rem;
+    
+}
+
+/* CORES */
+.jovem {
+    background: linear-gradient(90deg, #1e4fa1, #2f6ee5);
+    color: #fff;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.responsavel {
+    background: linear-gradient(90deg, #f5b400, #f8a130);
+    color: #333;
+    text-decoration: none;
+}
+
+.arrow {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* AVISO */
+.security {
+    margin-top: 22px;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+}
+
+/* 📱 TABLET */
+@media (min-width: 768px) {
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .welcome h2 {
+        font-size: 1.8rem;
+    }
+
+    .action span {
+        font-size: 1.05rem;
+    }
+}
+
+/* 🖥️ DESKTOP */
+@media (min-width: 1024px) {
+    .top-banner img {
+
+        
+        width: 220px;
+    }
+
+    .content {
+        padding: 80px 30px;
+    }
+}
