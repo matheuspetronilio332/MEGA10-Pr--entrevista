@@ -27,6 +27,7 @@ body {
 }
 
 
+
 .fundo-esquerdo {
     background-color: #2f6ee5;
     position: absolute;
@@ -182,20 +183,9 @@ body {
     }
 }
 
-/* 🖥️ DESKTOP */
-@media (min-width: 1024px) {
-    .top-banner img {
 
-        
-        width: 220px;
-    }
 
-    .content {
-        padding: 80px 30px;
-    }
-}
-
-@media (max-width: 768px ) {
+@media (max-width: 768px) {
     .top-banner {
         height: 220px;
         background-image: url("Imagens/banner-2.0.2-mobile.jpeg");
