@@ -267,7 +267,7 @@
                 <li>
                     <div class="quest-eight">
 
-                        <p class="title-question-four">8) Você já tem algum curso ou qualificação? </p>
+                          <p class="title-question-four">8) Você já tem algum curso ou qualificação? </p>
 
                         <div class="aviso-certificado">
                             <strong> 🎓 📄 Apenas se tiver certificado ou cursando</strong>
@@ -276,16 +276,20 @@
 
                         <div class="row-container">
                                 <span class="info-text">
-                                    É algo em informática, administrativo, inglês/idiomas ou outra área?
+                                    
                                 </span>
-                                <input type="text" name="detalhe_curso" class="input-inline" placeholder="">
-                        
+                                <label class="radio-option-4">
+                                    <input type="radio" name="qualificacao" value="nao">
+                                        <span></span>
+                                        Não 
+                                        <input type="radio" name="qualificacao" value="sim">
+                                        <span></span>
+                                        sim ->
+                                </label>
+                                <input type="text" name="detalhe_curso" class="input-inline" placeholder="É algo em informática, administrativo, inglês/idiomas ou outra área?">
+                                
 
-                            <label class="radio-option-4">
-                                <input type="radio" name="qualificacao" value="nao">
-                                <span></span>
-                                Não <br> tenho
-                            </label>
+                            
                         </div>
                     </div>
                 </li>

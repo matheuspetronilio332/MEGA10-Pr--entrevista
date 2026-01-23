@@ -17,15 +17,22 @@ body {
 
 
 /* TOPO */
-.banner-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    image-resolution: from-image;
-    image-rendering: optimizeQuality;
+.banner {
+  width: 100%;
+  height: 60vh; /* altura do banner */
+  overflow: hidden;
+}
     
+.banner picture,
+.banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
+.banner img {   
+  object-fit: cover; /* NÃO estica, NÃO deforma */
+}
 
 
 .fundo-esquerdo {
@@ -195,3 +202,4 @@ body {
         padding: 80px 30px;
     }
 }
+
