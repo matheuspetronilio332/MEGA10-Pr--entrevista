@@ -195,7 +195,7 @@ body {
     }
 }
 
-@media (max-width: 768px max-height: 700px) {
+@media (max-width: 768px ) {
     .top-banner {
         height: 220px;
         background-image: url("Imagens/banner-2.0.2-mobile.jpeg");
