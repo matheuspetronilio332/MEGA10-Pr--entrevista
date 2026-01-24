@@ -8,12 +8,12 @@
 
 /* TOPO */
 .top-banner {
-    background: url("imagen/cabecalho.jpeg") center center / cover no-repeat;
-    padding: 50px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    height: 170px;
+    width: 100%;
+    height: 150px;
+    background-image: url("imagen/banner-2.0.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Botão home */
@@ -678,6 +678,13 @@ label{
 
     .question {
         font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-banner {
+        height: 100px;
+        background-image: url("imagen/banner-2.0.2-mobile.jpeg");
     }
 }
 

@@ -564,6 +564,13 @@ label{
     font-size: 15px;
 }
 
+
+
+.security {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 /* ==========================
    RESPONSIVIDADE GERAL
 ========================== */
