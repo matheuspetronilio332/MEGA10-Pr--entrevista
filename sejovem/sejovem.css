@@ -565,6 +565,39 @@ label{
 }
 
 
+/* BOTÃO ENVIAR */
+.submit-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.submit-button {
+    display: inline-block;
+
+    background-color: #2f6ee5;
+    color: #fff;
+    text-decoration: none;
+
+    padding: 14px 26px;
+    font-size: 1.2rem;
+    font-weight: 900;
+
+    border-radius: 12px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    width: 100%;
+    max-width: 360px;
+
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+.submit-button:hover {
+    background-color: #255cbb;
+    transform: scale(1.03);
+}
+
 
 .security {
     text-align: center;
@@ -685,6 +718,23 @@ label{
 
     .question {
         font-size: 1.05rem;
+    }
+}
+
+/* botão resultado */
+@media (max-width: 480px) {
+    .submit-button {
+        font-size: 1rem;
+        padding: 12px 18px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .submit-button {
+        font-size: 1rem;
+        padding: 12px 18px;
+        border-radius: 10px;
     }
 }
 

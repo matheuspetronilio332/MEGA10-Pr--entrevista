@@ -260,29 +260,37 @@
                 <li>
                     <div class="quest-eight">
 
-                        <p class="title-question-four">8) Ele(a) já tem algum curso ou qualificação? </p>
+                        <p class="title-question-four">
+                            8) Você já tem algum curso ou qualificação?
+                        </p>
 
                         <div class="aviso-certificado">
                             <strong> 🎓 📄 Apenas se tiver certificado ou cursando</strong>
                         </div>
 
+                        <div class="row-container-complex">
 
-                        <div class="row-container">
-                                <span class="info-text">
-                                    É algo em informática, administrativo, inglês/idiomas ou outra área?
-                                </span>
-                                <input type="text" name="detalhe_curso" class="input-inline" placeholder="">
-                        
-
-                            <label class="radio-option-4">
-                                <input type="radio" name="qualificacao" value="nao">
+                            <label class="radio-option-8">
+                                <input type="radio" name="curso" id="nao" checked>
                                 <span></span>
-                                Não <br> tenho
+                                Não
                             </label>
+
+                            <label class="radio-option-8">
+                                <input type="radio" name="curso" id="sim">
+                                <span></span>
+                                Sim →
+                            </label>
+
+                            <!-- mantém sua classe, só adicionamos cursoInput -->
+                            <input
+                                type="text"
+                                class="input-inline cursoInput"
+                                placeholder="É algo em informática, administrativo, inglês/idiomas ou outra área?"
+                            >
                         </div>
                     </div>
-                </li>
-            
+                </li>         
 
                 
             </ol>
