@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -17,47 +19,234 @@ body {
 .top-banner {
     width: 100%;
     height: 350px;
-    background-image: url("imagen/fundo-form-sejovem.jpeg");
+    background-image: url("imagen/banner-2.0.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* TOPO */
-.top-banner {
-    width: 100%;
-    height: 350px;
-    background-image: url("imagen/");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 
 /* Botão home */
 
-.top-banner .botao-home {
+.top-banner {
+    width: 100%;
+    height: 350px;
+    background-image: url("imagen/banner-2.0.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Botão HOME */
+.botao-home {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #2f6fe571;
-    padding: 8px 12px;
-    border-radius: 5px;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(47, 111, 229, 0.6);
+    padding: 8px 14px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    color: white;
+    gap: 6px;
 }
-.top-banner .botao-home a {
+
+.botao-home a {
+    color: #fff;
     text-decoration: none;
-    color: white;
     font-weight: bold;
-
 }
-.top-banner .botao-home:hover {
-    background-color: #2f6fe5c0;
-    cursor: pointer;
-    scale: 1.0;
 
+.botao-home:hover {
+    background-color: rgba(47, 111, 229, 0.9);
+}
+
+/* Conteúdo */
+
+.etapa {
+    background-color: rgba(0, 102, 255, 0.264);
+    padding: 10px;
+    font-size: 20px;
+}
+.etapa p{
+    font-weight: 300;
+    color: rgb(0, 4, 255);
+    text-align: center;
+}
+.etapa p span {
+    font-weight: 700;
+    color: rgb(229, 155, 19);
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.2rem;
+    background-color: #5891d633;
+    border-radius: 10px;
+    text-align: justify;
+}
+
+/* MOBILE container*/
+@media (max-width: 768px) {
+    .container {
+        margin: 1.5rem 1rem;
+        padding: 1rem;
+    }
+}
+
+
+/* textos */
+
+.resultado-texto {
+    max-width: 760px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    line-height: 1.7;
+}
+
+/* TÍTULO */
+.resultado-texto h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #2b2b2b;
+    margin-bottom: 1.2rem;
+}
+
+/* TEXTO PADRÃO */
+.resultado-texto p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #2f2f2f;
+    margin-bottom: 1rem;
+}
+
+
+.resultado-texto strong {
+    font-weight: 800;
+    color: #1f1f1f;
+}
+
+
+.resultado-texto .destaque {
+    color: #000000;
+    font-weight: 500;
+}
+
+.resultado-texto .destaque span {
+    font-weight: 600;
+    color: #f5b400;
+}
+
+
+.resultado-texto .pergunta {
+    font-weight: 500;
+    color: #2b2b2b;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .resultado-texto {
+        padding: 1.2rem;
+    }
+
+    .resultado-texto h1 {
+        font-size: 1.4rem;
+    }
+
+    .resultado-texto p {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+
+/* video */
+
+.video {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.video video {
+    width: 100%;
+    max-width: 520px;   /* CONTROLA O TAMANHO */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+
+
+
+/* preparar  */
+
+.botao-preparar-filho {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* botão em si */
+.botao-preparar-filho a {
+    background: linear-gradient(95deg, #00acf5, #303df8);
+    color: #ffffff;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.botao-preparar-filho a:hover {
+    transform: scale(1.03);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .botao-preparar-filho a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+
+    .content {
+            max-width: 760px;
+            padding: 80px 30px;
+        }
+
+        .intro h1 {
+            font-size: 2rem;
+        }
+
+        .question {
+            font-size: 1.05rem;
+        }
+    }
+
+/* banner mobile */
+@media (max-width: 768px) {
+    .top-banner {
+        height: 220px;
+        background-image: url("imagen/banner-2.0.2-mobile.jpeg");
+    }
+}
+
+/* responsividade do video */
+
+@media (max-width: 768px) {
+    .video video {
+        max-width: 100%;
+    }
 }
