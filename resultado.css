@@ -28,28 +28,7 @@ body {
     position: relative;
 }
 
-/* Botão HOME */
-.botao-home {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background-color: rgba(47, 111, 229, 0.6);
-    padding: 8px 14px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
 
-.botao-home a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.botao-home:hover {
-    background-color: rgba(47, 111, 229, 0.9);
-}
 
 /* Conteúdo */
 
@@ -94,6 +73,7 @@ body {
     background-color: #5891d633;
     border-radius: 10px;
     text-align: left;
+    margin-bottom: 5px;
 }
 
 
@@ -111,8 +91,11 @@ body {
 
 
 
+
+
 .resultado-texto p{
     font-size: 1.6rem;
+
 }
 
 .resultado-texto {
@@ -122,6 +105,9 @@ body {
     border-radius: 12px;
     line-height: 1.7;
 }
+
+
+
 
 /* TÍTULO */
 h1 {
@@ -143,12 +129,14 @@ h1 {
     h1 {
         font-size: 1.8rem;
         margin: 20px;
+        font-weight: 600;
     }
 }
 
 @media (min-width: 1024px) {
     h1 {
         font-size: 2rem;
+        font-weight: 600;   
     }
 }
 
@@ -169,18 +157,19 @@ h1 {
     border-radius: 5px;
     text-align: center;
     margin-left: auto;
-    margin-right: auto  ;
+    margin-right: auto;
+    font-size: 1.3rem;
     
 }
 
 @media (min-width: 768px) {
     .aviso-video {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
 @media (min-width: 1024px) {
     .aviso-video {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
 /* video */
@@ -201,15 +190,8 @@ h1 {
 
 
 /* texto-conteudo */
-.resultado-texto strong {
-    font-weight: 800;
-    color: #1f1f1f;
-}
-.resultado-texto p {
-    font-size: 1.4rem;
-    text-align: left;
-}
-/* Desktop */
+
+
 @media (min-width: 769px) {
     .resultado-texto p,
     .container {
@@ -227,10 +209,6 @@ h1 {
 }   
 
 
-.resultado-texto .destaque {
-    color: #000000;
-    font-weight: 500;
-}
 
 .resultado-texto .destaque span {
     font-weight: 600;
@@ -238,10 +216,6 @@ h1 {
 }
 
 
-.resultado-texto .pergunta {
-    font-weight: 500;
-    color: #2b2b2b;
-}
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
@@ -267,6 +241,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* botão em si */
@@ -292,6 +267,17 @@ h1 {
         text-align: center;
     }
 }
+
+
+
+
+.security {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
 
 
 
