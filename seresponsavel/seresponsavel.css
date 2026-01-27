@@ -712,10 +712,15 @@ label{
 /* top banner para mobile */
 @media (max-width: 768px) {
     .top-banner {
-        height: 250px;
+        height: 450px;
         background-image: url("imagen/banner-2.0.2-mobile.jpeg");
+        background-size: cover;
+        background-position: center center;
     }
 }
+
+
+
 
 
 
