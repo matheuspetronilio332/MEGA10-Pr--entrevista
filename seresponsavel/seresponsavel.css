@@ -16,35 +16,6 @@
     background-repeat: no-repeat;
 }
 
-/* Botão home */
-
-.top-banner-button .botao-home {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #2f6fe571;
-    padding: 8px 12px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    color: white;
-}
-.top-banner-button .botao-home a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-
-}
-.top-banner-button .botao-home:hover {
-    background-color: #2f6fe5c0;
-    cursor: pointer;
-    scale: 1.0;
-
-}
-
-
 body {
     min-height: 100vh;
     background: #fff;
@@ -738,9 +709,10 @@ label{
     }
 }
 
+/* top banner para mobile */
 @media (max-width: 768px) {
     .top-banner {
-        height: 100px;
+        height: 250px;
         background-image: url("imagen/banner-2.0.2-mobile.jpeg");
     }
 }
