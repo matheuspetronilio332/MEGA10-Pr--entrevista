@@ -42,9 +42,6 @@ body {
 }
 
 
-
-
-
 /* CHECK */
 .checked {
   position: absolute;
@@ -170,6 +167,6 @@ body {
 @media (max-width: 768px) {
   .box {
     width: auto;
-    margin: 100px 1rem 20px;
+    margin-top: 100px;
   }
 }
