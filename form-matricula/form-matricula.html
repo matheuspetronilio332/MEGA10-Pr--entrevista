@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form-matricula.css">
+
+
+    
+    <title>Matrícula | MEGA10</title>
+</head>
+<body style="background-image: url(imagen/fundo-form-sejovem.jpeg); background-size: cover; background-attachment: fixed;">
+    <!-- top banner -->
+    <header class="top-banner"></header>
+
+    <!-- SCRIPT GOOGLE -->
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API&libraries=places&callback=initAutocomplete"
+    async
+    defer>
+    </script>
+
+
+    
+    <main class="box">
+        <!-- conteúdo do box -->
+
+        <!-- cabeçalho do box -->
+        <section class="box-cabeçalho">
+            <div class="titulo-box">
+                <h1>🎉Parabéns pela sua decisão!</h1>
+                <p>Você está prestes a se matricular na <strong><b>MEGA10</b>Formação Profissional.</strong></p>
+                <p>Aqui você vai preparar para <strong><b>conquistar o seu primeiro emprego</b></strong> com segurança.</p>
+            </div>
+        </section>
+
+         <!--sections com os conteúdos -->
+
+        <section class="seucurso">
+            <div class="titulo-seucurso">
+                <h1>Seu curso é:</h1>
+                <h2>Curso de Preparação para o Primeiro Emprego - MEGA10</h2>
+            </div>
+            <div class="conteudo-seucurso">
+                <img src="" alt="imagem-notbook">
+                <p>🖼️Informática Básica</p>
+                <ol class="modulos-basico">
+                    <li>Windows</li>
+                    <li>Word</li>
+                    <li>Excel</li>
+                    <li>PowerPoint</li>
+                </ol>
+
+                <div class="divider"></div>
+
+                <img src="" alt="pessoa-adm">
+                <p>🧑‍💼Administrativo e Atendimento</p>
+                <ol class="modulos-adm">
+                    <li>Atendimento ao Cliente</li>
+                    <li>Vendas</li>
+                    <li>Telemarketing</li>
+                    <li>Recepção</li>
+                    <li>Auxiliar Financeiro</li>
+                    <li>Operador de caixa</li>
+                    <li>Marketing</li>
+                    <li>Gestão de Pessoas</li>
+                </ol>
+
+            </div>
+
+            <P class="proximo-passo">
+                <strong><b>Próximo passo:</b></strong> Preencha os dados abaixo para <strong><b>fazer sua matrícula na MEGA10.</b></strong>
+            </P>
+
+            
+        </section>
+
+
+        <section class="dados">
+            <div class="dadosresponsavel">
+                <div class="box-titulo-dados">
+                    <h1>Dados do responsável</h1>
+                </div>
+
+                <form action="" method="post">
+
+                    <label>Nome Completo:</label>
+                    <input id="nome" type="text" name="nome">
+                    
+                    <label for="">CPF:</label>
+                    <input id="cpf" type="text" name="cpf" placeholder="---.---.---.--">
+
+                    <label for="">Data de Nascimento:</label>
+                    <input id="data-nascimento" type="date" name="data-nascimento">  
+
+                    <label>Rua</label>
+                    <input id="rua" type="text" name="rua">
+
+                    <label>Número</label>
+                    <input id="numero" type="number" name="numero">
+
+                    <label>Bairro</label>
+                    <input id="bairro" type="text" name="bairro">
+
+                    <label>Cidade</label>
+                    <input id="cidade" type="text" name="cidade">
+
+                    <label>Estado</label>
+                    <input id="estado" type="text" name="estado">
+
+                    <label>CEP</label>
+                    <input id="cep" type="text" name="cep">
+
+                    <label for="">Fone conjuge:</label>
+                    <input id="fine-conjuge" type="tel" name="fone-conjuge" placeholder="(--) - ---- ----"">
+
+                    <label for="">Fone para recado e nome:</label>
+                    <input id="fone-recado" type="text" name="fone-recado" placeholder="(--) - ---- ----">
+                    <input type="text" id="nome-recado" name="nome-recado" placeholder="Nome">
+                </form>
+            </div>
+         </section>
+
+         <!-- dados aluno -->
+
+         <section class="dados">
+            <div class="box-titulo-dados">
+                    <h1>Dados do responsável</h1>
+            </div>
+
+            <div class="dados-aluno">
+                <form action="" method="post">
+                    <label for="">Nome:</label>
+                    <input type="text" id="nome-aluno" name="nome-aluno">
+                    
+                    <label for="">Data de nascimento:</label>
+                    <input type="date" id="nascimento-aluno" name="nascimento-aluno">
+
+                    <label for="">Telefone/WhatsApp</label>
+                    <input type="tel" id="contato-aluno" placeholder="(--) - ---- ----"">
+
+                    
+
+
+                </form>
+            </div>
+
+         </section>
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+    <!-- AVISO -->
+    <footer class="security">
+        🔒 Suas informações são usadas apenas para o processo da entrevista da MEGA10.
+    </footer>
+</body>
+</html>
