@@ -8,18 +8,19 @@
 
     
     <title>Matrícula | MEGA10</title>
+
 </head>
 <body style="background-image: url(imagen/fundo-form-sejovem.jpeg); background-size: cover; background-attachment: fixed;">
     <!-- top banner -->
     <header class="top-banner"></header>
 
-    <!-- SCRIPT GOOGLE -->
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API&libraries=places&callback=initAutocomplete"
-    async
-    defer>
-    </script>
-
+    <div class="titulo-geral">
+        <h2>🚀 Entrevista Online – 💻<br>
+                <strong>1º Emprego <span class="mega">MEGA10</span></strong>
+        </h2>
+    </div>
+    
+    <div class="divider-geral"></div>
 
     
     <main class="box">
@@ -29,7 +30,7 @@
         <section class="box-cabeçalho">
             <div class="titulo-box">
                 <h1>🎉Parabéns pela sua decisão!</h1>
-                <p>Você está prestes a se matricular na <strong><b>MEGA10</b>Formação Profissional.</strong></p>
+                <p>Você está prestes a se matricular na <strong><b>MEGA10</b> Formação Profissional.</strong></p>
                 <p>Aqui você vai preparar para <strong><b>conquistar o seu primeiro emprego</b></strong> com segurança.</p>
             </div>
         </section>
@@ -37,95 +38,143 @@
          <!--sections com os conteúdos -->
 
         <section class="seucurso">
-            <div class="titulo-seucurso">
-                <h1>Seu curso é:</h1>
-                <h2>Curso de Preparação para o Primeiro Emprego - MEGA10</h2>
-            </div>
-            <div class="conteudo-seucurso">
-                <img src="" alt="imagem-notbook">
-                <p>🖼️Informática Básica</p>
-                <ol class="modulos-basico">
-                    <li>Windows</li>
-                    <li>Word</li>
-                    <li>Excel</li>
-                    <li>PowerPoint</li>
-                </ol>
+
+    <div class="titulo-seucurso">
+        <h1>Seu curso é:</h1>
+        <h2>Curso de Preparação para o Primeiro Emprego - MEGA10</h2>
+    </div>
+
+    <div class="conteudo-seucurso">
+
+        <!-- INFORMÁTICA -->
+        <div class="curso-card">
+
+                    <div class="painel-curso">
+                        <img src="imagens/notebook.png" alt="Informática Básica">
+                        <h4>💻 Informática para o Trabalho</h4>
+                        <p>
+                            Aqui o aluno aprende a usar o computador como o mercado exige:
+                            documentos, planilhas e apresentações profissionais.
+                        </p>
+                    </div>
+
+                    <div class="lista-curso">
+                        <h3>Informática Básica</h3>
+                        <ul class="lista-duas-colunas">
+                            <li>Windows</li>
+                            <li>Word</li>
+                            <li>Excel</li>
+                            <li>PowerPoint</li>
+                        </ul>
+                    </div>
+
+                </div>
 
                 <div class="divider"></div>
 
-                <img src="" alt="pessoa-adm">
-                <p>🧑‍💼Administrativo e Atendimento</p>
-                <ol class="modulos-adm">
-                    <li>Atendimento ao Cliente</li>
-                    <li>Vendas</li>
-                    <li>Telemarketing</li>
-                    <li>Recepção</li>
-                    <li>Auxiliar Financeiro</li>
-                    <li>Operador de caixa</li>
-                    <li>Marketing</li>
-                    <li>Gestão de Pessoas</li>
-                </ol>
+                <!-- ADMINISTRATIVO -->
+                <div class="curso-card">
+
+                    <div class="painel-curso">
+                        <img src="imagens/administrativo.png" alt="Administrativo">
+                        <h4>🧑‍💼 Administrativo e Atendimento</h4>
+                        <p>
+                            Formação completa para atuar em setores administrativos,
+                            vendas e atendimento ao cliente.
+                        </p>
+                    </div>
+
+                    <div class="lista-curso">
+                        <ul class="lista-duas-colunas">
+                            <li>Atendimento ao Cliente</li>
+                            <li>Vendas</li>
+                            <li>Telemarketing</li>
+                            <li>Recepção</li>
+                            <li>Auxiliar Financeiro</li>
+                            <li>Operador de Caixa</li>
+                            <li>Marketing</li>
+                            <li>Gestão de Pessoas</li>
+                        </ul>
+                    </div>
+
+                </div>
 
             </div>
+        </section>
 
-            <P class="proximo-passo">
-                <strong><b>Próximo passo:</b></strong> Preencha os dados abaixo para <strong><b>fazer sua matrícula na MEGA10.</b></strong>
-            </P>
+        <P class="proximo-passo">
+            <strong><b>Próximo passo:</b></strong> Preencha os dados abaixo para <strong><b>fazer sua matrícula na MEGA10.</b></strong>
+        </P>
 
-            
+
+
+        <section class="dados-resp">
+                <div class="box-titulo-dados">
+                    <h1>Dados do Responsável</h1>
+                </div>
+
+                <form class="form-responsavel">
+
+                    <div class="linha">
+                        <label>Nome completo:</label>
+                        <input type="text" class="input-grande">
+                    </div>
+
+                    <div class="linha dupla">
+                        <div>
+                            <label>CPF:</label>
+                            <input type="text" class="input-medio" placeholder="---.---.--- --">
+                        </div>
+
+                        <div>
+                            <label>Data de nascimento:</label>
+                            <input type="date" class="input-medio" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="linha">
+                        <label>Endereço: Rua/Bairro</label>
+                        <input type="text" class="input-grande">
+                    </div>
+
+                    <div class="linha">
+                        <label>Cidade e Estado:</label>
+                        <input type="text" class="input-grande">
+                    </div>
+
+                    <div class="linha dupla">
+                        <div>
+                            <label>Telefone:</label>
+                            <input type="text" class="input-medio" placeholder="(--) ----- ----">
+                        </div>
+
+                        <div>
+                            <label>Fone conj.:</label>
+                            <input type="text" class="input-medio" placeholder="(--) ----- ----">
+                        </div>
+                    </div>
+
+                    <div class="linha dupla">
+                        <div>
+                            <label>Fone recado e nome:</label>
+                            <input type="text" class="input-medio" placeholder="(--) ----- ----">
+                        </div>
+
+                        <div>
+                            <label>&nbsp;</label>
+                            <input type="text" class="input-medio" placeholder="Nome">
+                        </div>
+                    </div>
+
+                </form>
         </section>
 
 
-        <section class="dados">
-            <div class="dadosresponsavel">
-                <div class="box-titulo-dados">
-                    <h1>Dados do responsável</h1>
-                </div>
-
-                <form action="" method="post">
-
-                    <label>Nome Completo:</label>
-                    <input id="nome" type="text" name="nome">
-                    
-                    <label for="">CPF:</label>
-                    <input id="cpf" type="text" name="cpf" placeholder="---.---.---.--">
-
-                    <label for="">Data de Nascimento:</label>
-                    <input id="data-nascimento" type="date" name="data-nascimento">  
-
-                    <label>Rua</label>
-                    <input id="rua" type="text" name="rua">
-
-                    <label>Número</label>
-                    <input id="numero" type="number" name="numero">
-
-                    <label>Bairro</label>
-                    <input id="bairro" type="text" name="bairro">
-
-                    <label>Cidade</label>
-                    <input id="cidade" type="text" name="cidade">
-
-                    <label>Estado</label>
-                    <input id="estado" type="text" name="estado">
-
-                    <label>CEP</label>
-                    <input id="cep" type="text" name="cep">
-
-                    <label for="">Fone conjuge:</label>
-                    <input id="fine-conjuge" type="tel" name="fone-conjuge" placeholder="(--) - ---- ----"">
-
-                    <label for="">Fone para recado e nome:</label>
-                    <input id="fone-recado" type="text" name="fone-recado" placeholder="(--) - ---- ----">
-                    <input type="text" id="nome-recado" name="nome-recado" placeholder="Nome">
-                </form>
-            </div>
-         </section>
-
          <!-- dados aluno -->
 
-         <section class="dados">
+         <section class="dados-aluno-box">
             <div class="box-titulo-dados">
-                    <h1>Dados do responsável</h1>
+                    <h1>Dados do Aluno</h1>
             </div>
 
             <div class="dados-aluno">
@@ -137,23 +186,61 @@
                     <input type="date" id="nascimento-aluno" name="nascimento-aluno">
 
                     <label for="">Telefone/WhatsApp</label>
-                    <input type="tel" id="contato-aluno" placeholder="(--) - ---- ----"">
+                    <input type="tel" id="contato-aluno" placeholder="(--) - ---- ----">
 
+                    <label for="" class="melhor-dia">Melhor dia de estudos?(O professor fica disponível para instruir, e fazer atendimento individualizado)</label>
                     
+                    <label for="">Período:</label>
 
+                    <input type="checkbox" id="seg" name="seg">
+                    <label for="" class="text-seg">Seg.</label>
+                    
+                    <input type="checkbox" id="ter" name="ter">
+                    <label for="" class="text-ter">Ter.</label>
+
+                    <input type="checkbox" id="qua" name="qua">
+                    <label for="" class="text-qua">Qua.</label>
+
+                    <input type="checkbox" id="qui" name="qui">
+                    <label for="" class="text-qui">Qui.</label>
+
+                    <input type="checkbox" id="sex" name="sex">
+                    <label for="" class="text-sex">Sex.</label>
+
+                    <input type="checkbox" name="sab" id="sab" class="sab">
+                    <label for="" class="text-sab">Sab.</label>
 
                 </form>
             </div>
-
          </section>
 
+         <!-- final -->
+     <div class="final">
+        <P>🏁Proseguir para valores e pagamentos:</P>
+        <p>Estes dados são necessários para prosseguir para a etapa de valores e pagamentos da matrícula.</p>
+                
+        <img src="../Imagens/check-button-semfundo.png" alt="imagem-checked" class="checked">
+        <input type="checkbox" name="autorizo" id="autorizo" class="autorizo">
+        
+        
+        <p>Autorizo a MEGA10 a entrar em contato pelo <strong><b>WhatsApp</b></strong>. <br>
+        Na próxima etapa você verá valores e formas de pagamentos. <br>
+        Um de nossos consiltores irá acompanhar sua mátrícula.</p>
+
+        <div class="botao-prosseguir">
+            <a href="#">
+                    📝PROSEGUIR PARA A PRÓXIMA ETAPA >
+            </a>
+        </div>
+
+        <p> --> Os dados informados são usados exclusivamente pela nossa eaquipe. <br>
+        Na próxima etapa verá valores e formas de pagamento.</p>
+    </div>
 
 
     </main>
 
-
-
-
+    
 
 
 
