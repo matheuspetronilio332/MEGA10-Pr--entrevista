@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* RESET */
 * {
     margin: 0;
@@ -75,7 +77,12 @@ body {
     margin-bottom: 6px;
 }
 
+
+/* ==================== */
 /* BLOCO "SEU CURSO" */
+/* ==================== */
+
+
 .seucurso {
     background: var(--box-color);
     box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
@@ -119,92 +126,96 @@ body {
   gap: 40px;
 }
 
-.ul-basico {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
-    row-gap: 8px;
-}
 
-/* BLOCO DO CURSO */
-.curso-bloco {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
+/* ============================= */
+/* CARDS DOS CURSOS */
+/* ============================= */
 
-
-/* TÍTULO */
-.curso-bloco h3 {
-  font-size: 1.3rem;
-  color: #1e40af;
-  margin-bottom: 10px;
-}
-
-/* LISTA */
-.curso-bloco ul {
-  padding-left: 18px;
-}
-
-.ul-adm {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
-    row-gap: 8px;
-}
-
-.curso-bloco li {
-  color: #334155;
-  margin-bottom: 6px;
-  font-size: 0.95rem;
-}
-
-.curso-bloco li::marker {
-  color: #2563eb;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .conteudo-seucurso {
-    grid-template-columns: 1fr;
-  }
-
-  .curso-bloco {
-    align-items: center;
-  }
-}
-
-/* painel lateral basico */
-
-
-.painel-basico {
-    width: 140px;
-    height: 140px;
-    background: #f0f6ff;
-    border-radius: 16px;
+.curso-card {
     display: flex;
+    gap: 30px;
+    border-radius: 18px;
+    padding: 25px;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    background: linear-gradient(190deg, #0407b392, #061bbbcb );
-    padding: 15px;
+    font-family: "Montserrat", sans-serif;
 }
 
-.quadro-curso img {
-  width: 90px;
+/* painel lateral */
+.painel-curso {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    background: linear-gradient(180deg, #3c6fd1, #274fa8);
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.15);
+
+    width: 360px;
 }
 
-.painel-basico h1 {
+/* imagem */
+.img-painel img {
+    width: 110px;
+    flex-shrink: 0;
+}
+
+/* texto do painel */
+.texto {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.texto h4 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.texto p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+
+/* área da lista */
+.lista-curso {
+    flex: 1;
+}
+
+.lista-curso h3 {
+    font-size: 1.4rem;
+    color: #1e40af;
+    margin-bottom: 15px;
+}
+
+/* lista em duas colunas */
+.lista-duas-colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 30px;
+    padding-left: 18px;
     
 }
 
+.lista-duas-colunas li {
+    font-size: 0.95rem;
+    color: #334155;
+}
 
+.lista-duas-colunas li::marker {
+    color: #2563eb;
+}
 
+/* Final bloco do curso  */
 
 .divider {
     height: 2px;
-    background: linear-gradient(1deg, #ffffff1f, #6b6b6b52, #45454590, #6b6b6b32, #ffffff2b);
+    background: linear-gradient(1deg, #ffffff14, #6b6b6b52, #45454590, #76767632, #ffffff2b);
     margin: 15px 0;
+    
 }
 
 .divider-geral {
@@ -226,7 +237,10 @@ body {
 /* SEÇÕES DE DADOS */
 
 
+
 /* TÍTULO DAS SEÇÕES */
+
+
 /* CONTAINER */
 .dados {
     background: linear-gradient(180deg, #f8f9ff, #e6e9ff);
@@ -240,8 +254,8 @@ body {
     background: linear-gradient(180deg, #3c6fd1, #274fa8);
     color: #fff;
     padding: 10px 15px;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    border-radius: 10px 10px 0px 0px;
+    margin: -25px -25px 15px -25px;
 }
 
 .box-titulo-dados h1 {
@@ -334,21 +348,94 @@ input[type="checkbox"] {
     box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
     border-radius: 14px;
     padding: 25px;
-    color: #fff;
     margin-bottom: 30px;
-    margin-top: 0px;
-    padding-top: 0px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
 }
 
-.dados-aluno {
-    border-radius: 14px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+
+.form-aluno {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
+
+.form-aluno input {
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid #999;
+    padding: 5px 8px;
+    font-size: 0.9rem;
+    background: #fff;
+}
+
+.linha.tripla {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 20px;
+}
+
+/* cada campo */
+.linha.tripla .campo {
+    display: flex;
+    flex-direction: column;
+}
+
+/* labels */
+.linha.tripla label {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+
+/* Texto explicativo */
+.texto-info {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* Checkboxes em linha */
+.dias {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.dias label {
+    font-size: 0.85rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.periodo {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.periodo label {
+    font-size: 0.85rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .form-aluno .linha.dupla {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
 
 
 
