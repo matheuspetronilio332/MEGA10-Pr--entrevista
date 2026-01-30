@@ -1,0 +1,7 @@
+.resultado-texto {
+    max-width: 760px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    line-height: 1.7;
+}
