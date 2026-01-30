@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="form-matricula.css">
-
+    
 
     
     <title>Matrícula | MEGA10</title>
 
 </head>
+
+
+
+
 <body style="background-image: url(imagen/fundo-form-sejovem.jpeg); background-size: cover; background-attachment: fixed;">
+
+     <script src="form-matricula.js"></script>
+
+
+
+
     <!-- top banner -->
     <header class="top-banner"></header>
 
@@ -49,16 +59,8 @@
         <!-- INFORMÁTICA -->
         <div class="curso-card">
 
-                    <div class="painel-curso">
-                        <img src="imagens/notebook.png" alt="Informática Básica">
-                        <h4>💻 Informática para o Trabalho</h4>
-                        <p>
-                            Aqui o aluno aprende a usar o computador como o mercado exige:
-                            documentos, planilhas e apresentações profissionais.
-                        </p>
-                    </div>
-
                     <div class="lista-curso">
+                        <p style="color: orange; font-size: 30px; font-weight: 700;">Mod I</p>
                         <h3>Informática Básica</h3>
                         <ul class="lista-duas-colunas">
                             <li>Windows</li>
@@ -67,36 +69,62 @@
                             <li>PowerPoint</li>
                         </ul>
                     </div>
+                    <div class="painel-curso">
+                        <div class="img-painel">
+                            <img src="imagen/icone-notbook-removebg.png" alt="Informática Básica">
+                        </div>
+
+                        <div class="texto">
+                            <h4>💻 Informática para o Trabalho</h4>
+                            <p>
+                                Aqui o aluno aprende a usar o computador como o mercado exige:
+                                documentos, planilhas e apresentações profissionais.
+                            </p>
+                        </div>
+                        
+                    </div>
 
                 </div>
 
                 <div class="divider"></div>
 
                 <!-- ADMINISTRATIVO -->
-                <div class="curso-card">
+                    <div class="curso-card">
 
-                    <div class="painel-curso">
-                        <img src="imagens/administrativo.png" alt="Administrativo">
-                        <h4>🧑‍💼 Administrativo e Atendimento</h4>
-                        <p>
-                            Formação completa para atuar em setores administrativos,
-                            vendas e atendimento ao cliente.
-                        </p>
+                        
+
+                        <div class="lista-curso">
+
+                            <p style="color: orange; font-size: 30px; font-weight: 700;">Mod II</p>
+                            <h3>Administração</h3>
+
+                            <ul class="lista-duas-colunas">
+                                <li>Atendimento</li>
+                                <li>Vendas</li>
+                                <li>Telemarketing</li>
+                                <li>Recepção</li>
+                                <li>Auxiliar Financeiro</li>
+                                <li>Operador de Caixa</li>
+                                <li>Marketing</li>
+                                <li>Gestão de Pessoas</li>
+                            </ul>
+                        </div>
+
+                        <div class="painel-curso">
+                            <div class="img-painel">
+                                <img src="imagen/icone-pessoa-adm-removebg.png" alt="Administrativo">
+                            </div>
+
+                            <div class="texto">
+                                <h4>🧑‍💼 Administrativo e Atendimento</h4>
+                                <p>
+                                    Formação completa para atuar em setores administrativos,
+                                    vendas e atendimento ao cliente.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div class="lista-curso">
-                        <ul class="lista-duas-colunas">
-                            <li>Atendimento ao Cliente</li>
-                            <li>Vendas</li>
-                            <li>Telemarketing</li>
-                            <li>Recepção</li>
-                            <li>Auxiliar Financeiro</li>
-                            <li>Operador de Caixa</li>
-                            <li>Marketing</li>
-                            <li>Gestão de Pessoas</li>
-                        </ul>
-                    </div>
-
                 </div>
 
             </div>
@@ -177,40 +205,58 @@
                     <h1>Dados do Aluno</h1>
             </div>
 
-            <div class="dados-aluno">
-                <form action="" method="post">
-                    <label for="">Nome:</label>
-                    <input type="text" id="nome-aluno" name="nome-aluno">
-                    
-                    <label for="">Data de nascimento:</label>
-                    <input type="date" id="nascimento-aluno" name="nascimento-aluno">
+            <form class="form-aluno">
 
-                    <label for="">Telefone/WhatsApp</label>
-                    <input type="tel" id="contato-aluno" placeholder="(--) - ---- ----">
+                <div class="linha tripla">
+                    <div class="campo">
+                        <label>Nome:</label>
+                        <input type="text" placeholder="Nome completo">
+                    </div>
 
-                    <label for="" class="melhor-dia">Melhor dia de estudos?(O professor fica disponível para instruir, e fazer atendimento individualizado)</label>
-                    
-                    <label for="">Período:</label>
+                    <div class="campo">
+                        <label>Data de Nasc:</label>
+                        <input type="date">
+                    </div>
 
-                    <input type="checkbox" id="seg" name="seg">
-                    <label for="" class="text-seg">Seg.</label>
-                    
-                    <input type="checkbox" id="ter" name="ter">
-                    <label for="" class="text-ter">Ter.</label>
+                    <div class="campo">
+                        <label>Telefone:</label>
+                        <input type="tel" placeholder="(--) ----- ----">
+                    </div>
+                </div>
 
-                    <input type="checkbox" id="qua" name="qua">
-                    <label for="" class="text-qua">Qua.</label>
+                <div class="divider"></div>
 
-                    <input type="checkbox" id="qui" name="qui">
-                    <label for="" class="text-qui">Qui.</label>
+                <p class="texto-info">
+                    Qual o dia melhor de estudos (professor fica disponível para instruir. Atendimento individualizado)
+                </p>
 
-                    <input type="checkbox" id="sex" name="sex">
-                    <label for="" class="text-sex">Sex.</label>
+                <div class="dias">
+                    <label style="font-weight: 600; font-size: 15px; color: #4c4a4a;">Dia:</label>
 
-                    <input type="checkbox" name="sab" id="sab" class="sab">
-                    <label for="" class="text-sab">Sab.</label>
+                    <label><input type="checkbox" class="dia" value="seg"> Seg.</label>
+                    <label><input type="checkbox" class="dia" value="ter"> Ter.</label>
+                    <label><input type="checkbox" class="dia" value="qua"> Qua.</label>
+                    <label><input type="checkbox" class="dia" value="qui"> Qui.</label>
+                    <label><input type="checkbox" class="dia" value="sex"> Sex.</label>
+                    <label><input type="checkbox" class="dia" value="sab"> Sab.</label>
+                </div>
 
-                </form>
+
+               <div class="periodo">
+                    <label class="lbl-manha">
+                        <input type="checkbox" id="periodo-manha"> Manhã
+                    </label>
+
+                    <label class="lbl-tarde">
+                        <input type="checkbox" id="periodo-tarde"> Tarde
+                    </label>
+
+                    <label class="lbl-noite">
+                        <input type="checkbox" id="periodo-noite"> Noite
+                    </label>
+                </div>
+            </form>
+
             </div>
          </section>
 
