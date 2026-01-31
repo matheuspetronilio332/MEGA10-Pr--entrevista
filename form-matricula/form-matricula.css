@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 /* =========================================
    RESET E CONFIGURAÇÕES GLOBAIS
@@ -6,11 +6,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* ESSENCIAL: impede que o formulário saia da main */
-    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-:root { 
+:root {
     --box-color: #5891d633;
     --blue-header: #2b59c3;
     --blue-gradient: linear-gradient(180deg, #3c6fd1, #274fa8);
@@ -19,55 +19,54 @@
 
 body {
     min-height: 100vh;
-    background: #fff;
+    background-color: #fff;
     user-select: none;
-    /* A imagem de fundo é definida no HTML inline como você enviou */
 }
 
 /* =========================================
-   BANNER E TÍTULOS (Correção de Sobreposição)
+   BANNER E TÍTULOS
    ========================================= */
 .top-banner {
     width: 100%;
-    height: 320px;
+    min-height: 250px;
     background: url("imagen/banner-2.0.png") center/cover no-repeat;
+    display: block;
 }
 
 .titulo-geral {
     text-align: center;
-    padding: 30px 20px;
-    width: 100%;
+    padding: 20px 10px;
 }
 
 .titulo-geral h2 {
-    font-size: 2.5rem;
-    line-height: 1.4;
-    color: #fff; /* Ajustado para contraste com fundo escuro */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-size: 2.2rem;
+    color: #333;
+    line-height: 1.2;
 }
 
 .titulo-geral .mega {
-    color: #ffcc00; /* Destaque para a palavra MEGA10 */
+    color: #ffcc00;
+
 }
 
 /* =========================================
    CAIXA PRINCIPAL (BOX)
    ========================================= */
 .box {
-    max-width: 750px; /* Reduzi de 900px para 750px para ficar mais elegante no PC */
-    width: 90%;      /* Mantém margens nas laterais em telas menores */
-    margin: -100px auto 40px; /* O 'auto' nas laterais garante a centralização */
-    background-color: #5891d633;
+    max-width: 750px;
+    width: 92%;
+    margin: -100px auto 40px;
+    margin-top: 100px;
     border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    padding: 35px;    /* Aumentei o respiro interno */
+    padding: 30px;
     position: relative;
     z-index: 10;
+    background: var(--box-color);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .box-cabeçalho {
     text-align: center;
-    padding: 10px;
     margin-bottom: 25px;
 }
 
@@ -78,19 +77,14 @@ body {
 }
 
 /* =========================================
-   SEÇÃO SEU CURSO (Design Consolidado)
+   SEÇÃO SEU CURSO (O SEGREDO DO LAYOUT)
    ========================================= */
-.seucurso {
-    margin-bottom: 30px;
-}
-
 .course-card {
-    border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
-    background: var(--white);
-    background-color: #5891d633;
-    
+    margin-bottom: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    background: var(--box-color);
 }
 
 .course-banner {
@@ -101,45 +95,64 @@ body {
     font-weight: bold;
 }
 
-.course-module img {
-    max-width: 200px;
-    height: auto;
-    align-self: center;
-    margin-top: 10px;
-}
-
-.course-module p {
-    font-size: 0.85rem;
-    color: #333232;
-    margin: 12px 0;
-    line-height: 1.4;
-    text-align: justify;
-}
-
-.course-module {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-}
 
 .course-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
-    gap: 20px;
+    gap: 30px;
 }
 
-.course-module h4 {
+/* GRID AREAS: Organiza título, lista, imagem e texto */
+.course-module {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "lista imagem"
+        "texto texto";
+    grid-template-columns: 1fr auto;
+    gap: 10px 20px;
+    align-items: center;
+}
+
+.module-title {
+    grid-area: titulo;
     color: var(--blue-header);
-    font-size: 0.95rem;
-    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
+.module-text {
+    grid-area: lista;
+}
+
+.module-image {
+    grid-area: imagem;
+    display: flex;
+    justify-content: center;
+}
+
+.module-image img {
+    max-width: 120px;
+    height: auto;
+}
+
+.module-description {
+    grid-area: texto;
+    /* Ocupa as duas colunas embaixo */
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+    text-align: justify;
+    margin-top: 5px;
+}
 
 .course-module ul {
     list-style: none;
     font-size: 0.9rem;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 .course-module li::before {
@@ -148,99 +161,123 @@ body {
     font-weight: bold;
 }
 
-
-.proximo-passo {
-    margin: 30px;
-    font-size: 1.2rem;
-    text-align: center;
+.lista-duas-colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
 }
 
-
-
+.divider {
+    height: 1px;
+    background: #eee;
+    margin: 10px 0;
+}
 
 /* =========================================
-   FORMULÁRIOS (Correção de Vazamento)
+   FORMULÁRIOS
    ========================================= */
-.dados-resp, .dados-aluno-box {
+.dados-resp,
+.dados-aluno-box {
     background: var(--box-color);
     border-radius: 14px;
     padding: 25px;
     margin-bottom: 30px;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
 }
 
 .box-titulo-dados {
     background: var(--blue-gradient);
     color: #fff;
     padding: 12px 20px;
-    border-radius: 10px 10px 0px 0px;
-    margin: -25px -25px 20px -25px; /* Alinha com as bordas do box azul claro */
+    border-radius: 10px 10px 0 0;
+    margin: -25px -25px 20px -25px;
 }
 
-.box-titulo-dados h1 {
-    font-size: 1.15rem;
-    text-transform: uppercase;
-}
-
-/* Estrutura das Linhas */
 .linha {
     display: flex;
     flex-direction: column;
-    margin-bottom: 12px;
-}
-
-.linha.dupla {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.linha.tripla {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr; /* Proporções mais equilibradas */
-    gap: 15px;
-}
-
-label {
-    font-size: 0.85rem;
-    color: #444;
-    margin-bottom: 4px;
-    font-weight: 600;
-}
-
-input[type="text"], input[type="date"], input[type="tel"] {
-    height: 38px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 1px solid #bfc6ea;
-    background: #fff;
+    margin-bottom: 15px;
     width: 100%;
 }
 
-/* Checkboxes */
-.dias, .periodo {
-    display: flex;
+.linha-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 10px;
+    margin-bottom: 15px;
+}   
+
+.linha-tripla {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.campo {
+    display: flex;
+    flex-direction: column;
 }
 
-.dias label, .periodo label {
-    font-size: 0.9rem;
-    font-weight: 800;
-    cursor: pointer;
+
+input[type="text"], 
+input[type="date"], 
+input[type="tel"] {
+    width: 100%;
+    height: 42px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #bfc6ea;
+    background-color: #fff;
+    font-size: 1rem;
 }
 
 /* =========================================
-   RODAPÉ E BOTÕES
+   AJUSTE PARA CELULAR (SOLUÇÃO FINAL)
    ========================================= */
-.final {
-    text-align: center;
-    padding-top: 20px;
+@media (max-width: 768px) {
+    .box {
+        margin: 20px auto;
+        width: 95%;
+        padding: 15px;
+    }
+
+    .top-banner {
+        min-height: 180px;
+    }
+
+    .titulo-geral h2 {
+        font-size: 1.5rem;
+    }
+
+    .course-module {
+        grid-template-columns: 1fr 90px;
+        /* Ajusta espaço para imagem menor no celular */
+        gap: 10px;
+    }
+
+    .module-image img {
+        max-width: 150px;
+        margin-right: 110px;
+    }
+
+    .lista-duas-colunas {
+        grid-template-columns: 1fr;
+    }
+
+    .linha.dupla,
+    .linha.tripla {
+        grid-template-columns: 1fr;
+    }
+
+    .botao-prosseguir a {
+        width: 100%;
+        padding: 15px 10px;
+    }
+
 }
 
 .botao-prosseguir {
     margin: 25px 0;
+    text-align: center;
 }
 
 .botao-prosseguir a {
@@ -250,38 +287,25 @@ input[type="text"], input[type="date"], input[type="tel"] {
     text-decoration: none;
     padding: 16px 40px;
     border-radius: 12px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-.botao-prosseguir a:hover {
-    transform: scale(1.02);
-    filter: brightness(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .security {
     text-align: center;
     color: #fff;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     padding: 10px;
     font-size: 0.85rem;
 }
 
-/* =========================================
-   RESPONSIVIDADE (Mobile First)
-   ========================================= */
-@media (max-width: 768px) {
-    .top-banner { height: 200px; }
-    
-    .titulo-geral h2 { font-size: 1.6rem; }
-    
-    .box { margin-top: -60px; padding: 15px; }
 
-    .course-content, .linha.dupla, .linha.tripla {
-        grid-template-columns: 1fr; /* Empilha tudo no celular */
-    }
 
-    .course-card { margin-bottom: 15px; }
+
+
+/* final */
+
+.final {
+    text-align: center;
 }

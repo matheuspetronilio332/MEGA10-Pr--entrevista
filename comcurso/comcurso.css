@@ -133,9 +133,15 @@ body {
   .box {
     margin-top: 60px;
   }
+}
 
+@media (max-width: 768px) {
+  .box {
+    width: auto;
+    margin-top: 100px;
   .titulo-box h1 {
     font-size: 1.9rem;
+    }
   }
 }
 
