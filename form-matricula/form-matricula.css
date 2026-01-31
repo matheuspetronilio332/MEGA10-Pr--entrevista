@@ -286,7 +286,7 @@ input[type="tel"] {
     text-decoration: none;
     padding: 16px 40px;
     border-radius: 12px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
@@ -297,4 +297,14 @@ input[type="tel"] {
     background: rgba(0, 0, 0, 0.3);
     padding: 10px;
     font-size: 0.85rem;
+}
+
+
+
+
+
+/* final */
+
+.final {
+    text-align: center;
 }
