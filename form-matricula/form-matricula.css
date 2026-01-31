@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* RESET */
+/* RESET ORIGINAL */
 * {
     margin: 0;
     padding: 0;
@@ -8,23 +8,20 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-:root { --box-color: #5891d633;
+:root {
+    --box-color: #5891d633;
     --titulo-font-size: 1.5rem;
-    --fonte-font-family: Arial, Helvetica, sans-serif;      
-
-    
+    --fonte-font-family: Arial, Helvetica, sans-serif;
 }
 
+html, body { 
+    overflow-x: hidden; 
+}
 
-
-/* FUNDO DA PÁGINA */
 body {
-    min-height: 100vh;
     min-height: 100vh;
     background: #fff;
     user-select: none;
-   
-
 }
 
 /* BANNER SUPERIOR */
@@ -34,103 +31,68 @@ body {
     background: url("imagen/banner-2.0.png") center/cover no-repeat;
 }
 
-
-/* titulo geral */
-
-.titulo-geral h2 {
-    font-size: 2.5rem;   /* desktop */
-    line-height: 1.4;
+.titulo-geral {
+    padding: 40px 20px 100px 20px; /* Espaço para o título respirar */
     text-align: center;
-    margin-top: 30px;
+    background: transparent;
 }
-
-
-
 
 /* CAIXA PRINCIPAL */
 .box {
     max-width: 900px;
-    margin: -120px auto 40px;
+    margin: -80px auto 40px; /* Reduzido de -120px para não invadir o título */
     background: var(--box-color);
     border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
     padding: 30px;
-    margin-top: 100px;
+    position: relative;
+    z-index: 1;
 }
 
-/* CABEÇALHO */
 .box-cabeçalho {
     text-align: center;
     padding: 20px;
     margin-bottom: 25px;
 }
 
-.box-cabeçalho h1 {
-    font-size: 1.8rem;
-    color: #1e3f91;
-    margin-bottom: 10px;
-}
-
-.box-cabeçalho p {
-    font-size: 1.05rem;
-    color: #333;
-    margin-bottom: 6px;
-}
-
-
-/* ==================== */
-/* BLOCO "SEU CURSO" */
-/* ==================== */
-
-
+/* SEÇÃO SEU CURSO */
 .seucurso {
     background: var(--box-color);
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
     border-radius: 14px;
     padding: 25px;
     color: #fff;
     margin-bottom: 30px;
-    
-    
 }
 
 .titulo-seucurso {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #1e3f91;
-  background: linear-gradient(180deg, #3c6fd1, #274fa8);
-  margin-top: -25px;
-  margin: -25px -25px 18px;
-  border-radius: 16px 16px 0px 0px;
-  padding: 10px;
+    text-align: center;
+    background: linear-gradient(180deg, #3c6fd1, #274fa8);
+    margin: -25px -25px 18px;
+    border-radius: 16px 16px 0px 0px;
+    padding: 10px;
 }
 
-.titulo-seucurso h1 {
-  font-size: 2.4rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-
+.titulo-seucurso h1 { 
+    font-size: 2.4rem; 
+    color: #ffffff; 
 }
 
-.titulo-seucurso h2 {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-/* CONTEÚDO */
-.conteudo-seucurso {
-  max-width: 1000px;
-  margin: auto;
-  display: grid;
-  gap: 40px;
+/* TÍTULO DOS MÓDULOS (LARANJA) */
+.titulo-mod {
+    color: orange;
+    font-size: 28px;
+    font-weight: 800;
+    text-align: left;
+    margin-bottom: 15px;
+    padding-bottom: 0; /* Removido o padding que causava erro */
 }
 
 
-/* ============================= */
+
+
+
 /* CARDS DOS CURSOS */
-/* ============================= */
-
 .curso-card {
     display: flex;
     gap: 30px;
@@ -140,340 +102,102 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-/* painel lateral */
-.painel-curso {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-
-    background: linear-gradient(180deg, #3c6fd1, #274fa8);
-    border-radius: 16px;
-    padding: 20px;
-    color: #fff;
-    box-shadow: inset 0 0 10px rgba(255,255,255,0.15);
-
-    width: 360px;
-}
-
-/* imagem */
-.img-painel img {
-    width: 110px;
-    flex-shrink: 0;
-}
-
-/* texto do painel */
-.texto {
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-}
-
-.texto h4 {
-    font-size: 1.05rem;
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-.texto p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-
-/* área da lista */
+/* LISTA E IMAGEM FLUTUANTE */
 .lista-curso {
     flex: 1;
+    position: relative; /* Base para o posicionamento da imagem */
 }
 
-.lista-curso h3 {
-    font-size: 1.4rem;
-    color: #1e40af;
-    margin-bottom: 15px;
+.img-painel {
+    position: absolute; /* Faz a imagem flutuar sobre o texto */
+    z-index: 99;
+    width: 120px;
+    bottom: -10px; 
+    right: -10px;
+    pointer-events: none; /* Garante que a imagem não bloqueie cliques no texto */
 }
 
-/* lista em duas colunas */
+.img-painel img {
+    width: 100%;
+    display: block;
+}
+
+/* LISTAS */
+.lista-simples {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.lista-simples li {
+    font-size: 1.1rem;
+    color: #334155;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.lista-simples li::before {
+    content: "•";
+    color: #3b82f6;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
 .lista-duas-colunas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px 30px;
     padding-left: 18px;
-    
 }
 
-.lista-duas-colunas li {
-    font-size: 0.95rem;
-    color: #334155;
+.lista-duas-colunas li { 
+    font-size: 0.95rem; 
+    color: #334155; 
 }
 
-.lista-duas-colunas li::marker {
-    color: #2563eb;
-}
-
-/* Final bloco do curso  */
-
-.divider {
-    height: 2px;
-    background: linear-gradient(1deg, #ffffff14, #6b6b6b52, #45454590, #76767632, #ffffff2b);
-    margin: 15px 0;
-    
-}
-
-.divider-geral {
-    height: 1px;
-    background: #ccc;
-    margin: 1px 0;
-    
-   
-}
-
-
-.proximo-passo {
-    margin-top: 15px;
-    font-size: 1rem;
-    margin-left: 15px;
-    margin: 30px;
-}
-
-/* SEÇÕES DE DADOS */
-
-
-
-/* TÍTULO DAS SEÇÕES */
-
-
-/* CONTAINER */
-.dados {
-    background: linear-gradient(180deg, #f8f9ff, #e6e9ff);
-    border-radius: 14px;
+/* PAINEL AZUL LATERAL */
+.painel-curso {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: linear-gradient(180deg, #3c6fd1, #274fa8);
+    border-radius: 16px;
     padding: 20px;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    color: #fff;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.15);
+    width: 360px;
 }
 
-/* TÍTULO */
+/* FORMULÁRIOS */
+.dados-resp, .dados-aluno-box {
+    background: var(--box-color);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
 .box-titulo-dados {
     background: linear-gradient(180deg, #3c6fd1, #274fa8);
     color: #fff;
     padding: 10px 15px;
     border-radius: 10px 10px 0px 0px;
-    margin: -25px -25px 15px -25px;
+    margin: -25px -25px 15px;
 }
 
-.box-titulo-dados h1 {
-    font-size: 1.15rem;
-}
+.linha.dupla { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.linha.tripla { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 20px; }
 
-/* dados responsavel */
-
-.dados-resp {
-    background: var(--box-color);
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
-    border-radius: 14px;
-    padding: 25px;
-    color: #fff;
-    margin-bottom: 30px;
-    margin-top: 0px;
-    padding-top: 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-
-/* LINHAS */
-.linha {
-    display: flex;
-    flex-direction: column;
-}
-
-.linha.dupla {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-/* LABEL */
-.form-responsavel label {
-    font-size: 0.9rem;
-    color: #333;
-    margin-bottom: 4px;
-}
-
-/* INPUTS */
-.form-responsavel input {
+input {
     height: 34px;
     padding: 6px 10px;
     border-radius: 8px;
     border: 2px solid #bfc6ea;
     background: linear-gradient(180deg, #ffffff, #f1f3ff);
-    font-size: 0.95rem;
 }
 
-/* TAMANHOS */
-.input-grande {
-    width: 100%;
-}
-
-.input-medio {
-    width: 100%;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .linha.dupla {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-input[type="text"],
-input[type="date"],
-input[type="number"],
-input[type="tel"] {
-    padding: 8px 10px;
-    border-radius: 8px;
-    border: 1px solid #aaa;
-    background: #fff;
-}
-
-/* CHECKBOX */
-input[type="checkbox"] {
-    transform: scale(1.2);
-    margin-right: 6px;
-}
-
-/* dados alunos */
-
-.dados-aluno-box {
-    background: var(--box-color);
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
-    border-radius: 14px;
-    padding: 25px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.form-aluno {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.form-aluno input {
-    height: 32px;
-    border-radius: 6px;
-    border: 1px solid #999;
-    padding: 5px 8px;
-    font-size: 0.9rem;
-    background: #fff;
-}
-
-.linha.tripla {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
-    gap: 20px;
-}
-
-/* cada campo */
-.linha.tripla .campo {
-    display: flex;
-    flex-direction: column;
-}
-
-/* labels */
-.linha.tripla label {
-    font-size: 0.9rem;
-    color: #333;
-    margin-bottom: 4px;
-}
-
-
-/* Texto explicativo */
-.texto-info {
-    font-size: 1rem;
-    color: #333;
-    margin-top: 5px;
-}
-
-/* Checkboxes em linha */
-.dias {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.dias label {
-    font-size: 0.85rem;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.periodo {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.periodo label {
-    font-size: 0.85rem;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .form-aluno .linha.dupla {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* final */
-
-.final {
-    text-align: center;
-}
-
-.checked {
-    width: 80px;
-}
-
-
-
-
-/* CONFIRMAÇÃO */
-.autorizo {
-    margin-top: 10px;
-}
-
-/* BOTÃO FINAL */
-.botao-prosseguir {
-    margin-top: 20px;
-    text-align: center;
-}
-
+/* BOTÃO PROSSEGUIR */
+.botao-prosseguir { text-align: center; margin-top: 20px; }
 .botao-prosseguir a {
     display: inline-block;
     background: linear-gradient(180deg, #2ecc71, #1fa75a);
@@ -481,35 +205,44 @@ input[type="checkbox"] {
     text-decoration: none;
     padding: 14px 30px;
     border-radius: 12px;
-    font-size: 1.1rem;
     font-weight: bold;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
-.botao-prosseguir a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.35);
-}
-
-/* RODAPÉ */
-.security {
-    text-align: center;
-    color: #fff;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-}
-
-/* RESPONSIVO */
+/* --- RESPONSIVIDADE (MOBILE) --- */
 @media (max-width: 768px) {
-    .box {
-        margin-top: -80px;
-        padding: 20px;
+    .titulo-geral {
+        padding: 40px 20px 80px 20px;
     }
 
-    .top-banner {
-        height: 220px;
+    .box {
+        max-width: 95%;
+        margin: -60px auto 40px; 
+        padding: 15px;
+    }
+
+    .curso-card {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .painel-curso {
+        width: 100%; 
+    }
+
+    .lista-duas-colunas {
+        grid-template-columns: 1fr; 
+    }
+
+    .img-painel {
+        position: relative; /* No celular, ela segue o fluxo para não cobrir texto importante */
+        bottom: 0;
+        right: 0;
+        margin: 10px auto;
+        width: 100px;
+    }
+
+    .linha.dupla, .linha.tripla {
+        grid-template-columns: 1fr;
     }
 }
-
-
