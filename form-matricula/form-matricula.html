@@ -9,7 +9,7 @@
 </head>
 
 <body
-    style="background-image: url(imagen/fundo-form-sejovem.jpeg); background-size: cover; background-attachment: fixed;">
+    style="background-image: url('imagen/fundo-form-sejovem.jpeg'); background-size: cover; background-attachment: fixed;">
 
     <script src="form-matricula.js"></script>
 
@@ -26,88 +26,70 @@
     <main class="box">
         <section class="box-cabeçalho">
             <div class="titulo-box">
-                <h1>🎉Parabéns pela sua decisão!</h1>
+                <h1>🎉 Parabéns pela sua decisão!</h1>
                 <p>Você está prestes a se matricular na <strong><b>MEGA10</b> Formação Profissional.</strong></p>
-                <p>Aqui você vai preparar para <strong><b>conquistar o seu primeiro emprego</b></strong> com segurança.
-                </p>
+                <p>Aqui você vai se preparar para <strong><b>conquistar o seu primeiro emprego</b></strong> com
+                    segurança.</p>
+            </div>
+        </section>
+        <section class="seucurso">
+            <div class="course-card">
+                <div class="course-banner">
+                    <strong style="color: orange; font-size: 1.3rem;">SEU CURSO É:</strong><br>
+                    <span class="course-title">Curso de Preparação para o Primeiro Emprego – MEGA10</span>
+                </div>
+                <div class="course-content">
+
+                    <div class="course-module">
+                        <h4 class="module-title">💻 Informática Básica</h4>
+                        <div class="module-text">
+                            <ul class="lista-simples">
+                                <li>Windows</li>
+                                <li>Excel</li>
+                                <li>Word</li>
+                                <li>PowerPoint</li>
+                            </ul>
+                        </div>
+                        <div class="module-image">
+                            <img src="imagen/icone-notbook-removebg.png" alt="Informática">
+                        </div>
+                        <p class="module-description">
+                            Aqui seu filho aprende a usar o computador como as empresas usam de verdade. Ele ganha
+                            prática para atuar em escritórios e lojas.
+                        </p>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="course-module">
+                        <h4 class="module-title">🤵🏽  Administrativo e Atendimento</h4>
+                        <div class="module-text">
+                            <ul class="lista-duas-colunas">
+                                <li>Atendimento</li>
+                                <li>Telemarketing</li>
+                                <li>Auxiliar Financeiro</li>
+                                <li>Marketing</li>
+                                <li>Vendas</li>
+                                <li>Recepção</li>
+                                <li>Auxiliar de RH</li>
+                                <li>Operador de Caixa</li>
+                            </ul>
+                        </div>
+                        <div class="module-image">
+                            <img src="imagen/icone-pessoa-adm-removebg.png" alt="Administrativo">
+                        </div>
+                        <p class="module-description">
+                            Prepara para profissões reais como vendas e secretariado, desenvolvendo postura profissional
+                            e organização.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="seucurso">
-            <div class="titulo-seucurso">
-                <h1>Seu curso é:</h1>
-                <h2>Curso de Preparação para o Primeiro Emprego - MEGA10</h2>
-            </div>
-
-            <div class="conteudo-seucurso">
-                <div class="img-painel-adm">
-                    <img src="imagen/icone-notbook-removebg.png" alt="Administrativo"style="width: 80px;">
-                </div>
-
-                <div class="curso-card">
-                    <div class="lista-curso">
-                        <ul class="lista-simples">
-                            <li>Windows</li>
-                            <li>Word</li>
-                            <li>Excel</li>
-                            <li>PowerPoint</li>
-                        </ul>
-
-
-                        <div class="painel-curso">
-                            <div class="texto">
-
-
-                                <h4>💻 Informática para o Trabalho</h4>
-                                <p>
-                                    Aqui o aluno aprende a usar o computador como o mercado exige:
-                                    documentos, planilhas e apresentações profissionais.
-                                </p>
-                            </div>
-
-
-                        </div>
-
-
-                        <div class="divider"></div>
-
-                        <div class="curso-card">
-                            <div class="lista-curso">
-                                <h3>Administração</h3>
-                                <ul class="lista-duas-colunas">
-                                    <li>Atendimento ao Cliente</li>
-                                    <li>Vendas</li>
-                                    <li>Telemarketing</li>
-                                    <li>Recepção</li>
-                                    <li>Auxiliar Financeiro</li>
-                                    <li>Operador de Caixa</li>
-                                    <li>Marketing</li>
-                                    <li>Gestão de Pessoas</li>
-                                </ul>
-
-
-
-
-                                <div class="painel-curso">
-                                    <div class="img-painel-adm">
-                                        <img src="imagen/icone-pessoa-adm-removebg.png" alt="Administrativo"
-                                            style="width: 80px;">
-                                    </div>
-
-                                    <div class="texto">
-                                        <h4>🧑‍💼 Administrativo e Atendimento</h4>
-                                        <p>
-                                            Formação completa para atuar em setores administrativos,
-                                            vendas e atendimento ao cliente.
-                                        </p>
-                                    </div>
-
-
-                
-
         <p class="proximo-passo">
-            <strong><b>Próximo passo:</b></strong> Preencha os dados abaixo para <strong><b>fazer sua matrícula na
-                    MEGA10.</b></strong>
+            <strong>Próximo passo:</strong> Preencha os dados abaixo para <strong>fazer sua matrícula na
+                MEGA10.</strong>
         </p>
 
         <section class="dados-resp">
@@ -122,29 +104,35 @@
                 <div class="linha dupla">
                     <div>
                         <label>CPF:</label>
-                        <input type="text" class="input-medio" placeholder="---.---.--- --">
+                        <input type="text" placeholder="---.---.--- --">
                     </div>
                     <div>
                         <label>Data de nascimento:</label>
-                        <input type="date" class="input-medio">
+                        <input type="date">
                     </div>
                 </div>
                 <div class="linha">
                     <label>Endereço: Rua/Bairro</label>
-                    <input type="text" class="input-grande">
-                </div>
-                <div class="linha">
-                    <label>Cidade e Estado:</label>
-                    <input type="text" class="input-grande">
+                    <input type="text">
                 </div>
                 <div class="linha dupla">
                     <div>
-                        <label>Telefone:</label>
-                        <input type="text" class="input-medio" placeholder="(--) ----- ----">
+                        <label>Cidade e Estado:</label>
+                        <input type="text">
                     </div>
                     <div>
-                        <label>Fone conj.:</label>
-                        <input type="text" class="input-medio" placeholder="(--) ----- ----">
+                        <label>Telefone:</label>
+                        <input type="tel" placeholder="(--) ----- ----">
+                    </div>
+                </div>
+                <div class="linha dupla">
+                    <div>
+                        <label>Fone recado e nome:</label>
+                        <input type="tel" placeholder="(--) ----- ----">
+                    </div>
+                    <div>
+                        <label>&nbsp;</label>
+                        <input type="text" placeholder="Nome">
                     </div>
                 </div>
             </form>
@@ -169,16 +157,14 @@
                         <input type="tel" placeholder="(--) ----- ----">
                     </div>
                 </div>
-                <div class="divider"></div>
-                <p class="texto-info">Qual o dia melhor de estudos?</p>
+                <p class="texto-info">Qual o melhor dia de estudos?</p>
                 <div class="dias">
-                    <label style="font-weight: 600; font-size: 15px; color: #4c4a4a;">Dia:</label>
-                    <label><input type="checkbox" value="seg"> Seg.</label>
-                    <label><input type="checkbox" value="ter"> Ter.</label>
-                    <label><input type="checkbox" value="qua"> Qua.</label>
-                    <label><input type="checkbox" value="qui"> Qui.</label>
-                    <label><input type="checkbox" value="sex"> Sex.</label>
-                    <label><input type="checkbox" value="sab"> Sab.</label>
+                    <label><input type="checkbox"> Seg.</label>
+                    <label><input type="checkbox"> Ter.</label>
+                    <label><input type="checkbox"> Qua.</label>
+                    <label><input type="checkbox"> Qui.</label>
+                    <label><input type="checkbox"> Sex.</label>
+                    <label><input type="checkbox"> Sab.</label>
                 </div>
                 <div class="periodo">
                     <label><input type="checkbox"> Manhã</label>
@@ -189,22 +175,13 @@
         </section>
 
         <div class="final">
-            <p>🏁 Prosseguir para valores e pagamentos:</p>
-            <p>Estes dados são necessários para prosseguir.</p>
-            <img src="../Imagens/check-button-semfundo.png" alt="imagem-checked" class="checked">
-            <input type="checkbox" name="autorizo" id="autorizo" class="autorizo">
-            <p>Autorizo a MEGA10 a entrar em contato pelo <strong><b>WhatsApp</b></strong>.</p>
+            <p></p>
+            <p></p>
             <div class="botao-prosseguir">
-                <a href="#">📝 PROSSEGUIR PARA A PRÓXIMA ETAPA ></a>
+                <a href="#">📝Ver valores e garantir vaga ></a>
             </div>
+            
         </div>
-
-
-        <p> Os dados informados são usados exclusivamente pela nossa eaquipe. <br>
-            Na próxima etapa verá valores e formas de pagamento.</p>
-        </div>
-
-
     </main>
 
     <footer class="security">

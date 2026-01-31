@@ -1,248 +1,300 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* RESET ORIGINAL */
+/* =========================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 :root {
     --box-color: #5891d633;
-    --titulo-font-size: 1.5rem;
-    --fonte-font-family: Arial, Helvetica, sans-serif;
-}
-
-html, body { 
-    overflow-x: hidden; 
+    --blue-header: #2b59c3;
+    --blue-gradient: linear-gradient(180deg, #3c6fd1, #274fa8);
+    --white: #ffffff;
 }
 
 body {
     min-height: 100vh;
-    background: #fff;
+    background-color: #fff;
     user-select: none;
 }
 
-/* BANNER SUPERIOR */
+/* =========================================
+   BANNER E TÍTULOS
+   ========================================= */
 .top-banner {
     width: 100%;
-    height: 320px;
+    min-height: 250px;
     background: url("imagen/banner-2.0.png") center/cover no-repeat;
+    display: block;
 }
 
 .titulo-geral {
-    padding: 40px 20px 100px 20px; /* Espaço para o título respirar */
     text-align: center;
-    background: transparent;
+    padding: 20px 10px;
 }
 
-/* CAIXA PRINCIPAL */
+.titulo-geral h2 {
+    font-size: 2.2rem;
+    color: #333;
+    line-height: 1.2;
+}
+
+.titulo-geral .mega {
+    color: #ffcc00;
+}
+
+/* =========================================
+   CAIXA PRINCIPAL (BOX)
+   ========================================= */
 .box {
-    max-width: 900px;
-    margin: -80px auto 40px; /* Reduzido de -120px para não invadir o título */
-    background: var(--box-color);
+    max-width: 750px;
+    width: 92%;
+    margin: -100px auto 40px;
+    margin-top: 100px;
     border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
     padding: 30px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
+    background: var(--box-color);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .box-cabeçalho {
     text-align: center;
-    padding: 20px;
     margin-bottom: 25px;
 }
 
-/* SEÇÃO SEU CURSO */
-.seucurso {
-    background: var(--box-color);
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
-    border-radius: 14px;
-    padding: 25px;
-    color: #fff;
+.box-cabeçalho h1 {
+    font-size: 1.8rem;
+    color: #1e3f91;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   SEÇÃO SEU CURSO (O SEGREDO DO LAYOUT)
+   ========================================= */
+.course-card {
+    border-radius: 10px;
+    overflow: hidden;
     margin-bottom: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    background: var(--box-color);
 }
 
-.titulo-seucurso {
+.course-banner {
+    background: var(--blue-header);
+    color: white;
+    padding: 15px;
     text-align: center;
-    background: linear-gradient(180deg, #3c6fd1, #274fa8);
-    margin: -25px -25px 18px;
-    border-radius: 16px 16px 0px 0px;
-    padding: 10px;
+    font-weight: bold;
 }
 
-.titulo-seucurso h1 { 
-    font-size: 2.4rem; 
-    color: #ffffff; 
-}
-
-/* TÍTULO DOS MÓDULOS (LARANJA) */
-.titulo-mod {
-    color: orange;
-    font-size: 28px;
-    font-weight: 800;
-    text-align: left;
-    margin-bottom: 15px;
-    padding-bottom: 0; /* Removido o padding que causava erro */
-}
-
-
-
-
-
-/* CARDS DOS CURSOS */
-.curso-card {
+.course-content {
     display: flex;
+    flex-direction: column;
+    padding: 20px;
     gap: 30px;
-    border-radius: 18px;
-    padding: 25px;
+}
+
+/* GRID AREAS: Organiza título, lista, imagem e texto */
+.course-module {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "lista imagem"
+        "texto texto";
+    grid-template-columns: 1fr auto;
+    gap: 10px 20px;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
 }
 
-/* LISTA E IMAGEM FLUTUANTE */
-.lista-curso {
-    flex: 1;
-    position: relative; /* Base para o posicionamento da imagem */
-}
-
-.img-painel {
-    position: absolute; /* Faz a imagem flutuar sobre o texto */
-    z-index: 99;
-    width: 120px;
-    bottom: -10px; 
-    right: -10px;
-    pointer-events: none; /* Garante que a imagem não bloqueie cliques no texto */
-}
-
-.img-painel img {
-    width: 100%;
-    display: block;
-}
-
-/* LISTAS */
-.lista-simples {
-    list-style: none;
-    padding-left: 5px;
-}
-
-.lista-simples li {
+.module-title {
+    grid-area: titulo;
+    color: var(--blue-header);
     font-size: 1.1rem;
-    color: #334155;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
+    font-weight: bold;
 }
 
-.lista-simples li::before {
-    content: "•";
-    color: #3b82f6;
-    font-size: 30px;
-    margin-right: 10px;
+.module-text {
+    grid-area: lista;
+}
+
+.module-image {
+    grid-area: imagem;
+    display: flex;
+    justify-content: center;
+}
+
+.module-image img {
+    max-width: 120px;
+    height: auto;
+}
+
+.module-description {
+    grid-area: texto;
+    /* Ocupa as duas colunas embaixo */
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+    text-align: justify;
+    margin-top: 5px;
+}
+
+.course-module ul {
+    list-style: none;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.course-module li::before {
+    content: "• ";
+    color: var(--blue-header);
+    font-weight: bold;
 }
 
 .lista-duas-colunas {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px 30px;
-    padding-left: 18px;
+    gap: 5px;
 }
 
-.lista-duas-colunas li { 
-    font-size: 0.95rem; 
-    color: #334155; 
+.divider {
+    height: 1px;
+    background: #eee;
+    margin: 10px 0;
 }
 
-/* PAINEL AZUL LATERAL */
-.painel-curso {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: linear-gradient(180deg, #3c6fd1, #274fa8);
-    border-radius: 16px;
-    padding: 20px;
-    color: #fff;
-    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.15);
-    width: 360px;
-}
-
-/* FORMULÁRIOS */
-.dados-resp, .dados-aluno-box {
+/* =========================================
+   FORMULÁRIOS
+   ========================================= */
+.dados-resp,
+.dados-aluno-box {
     background: var(--box-color);
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
     border-radius: 14px;
     padding: 25px;
     margin-bottom: 30px;
 }
 
 .box-titulo-dados {
-    background: linear-gradient(180deg, #3c6fd1, #274fa8);
+    background: var(--blue-gradient);
     color: #fff;
-    padding: 10px 15px;
-    border-radius: 10px 10px 0px 0px;
-    margin: -25px -25px 15px;
+    padding: 12px 20px;
+    border-radius: 10px 10px 0 0;
+    margin: -25px -25px 20px -25px;
 }
 
-.linha.dupla { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.linha.tripla { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 20px; }
+.linha {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+}
 
-input {
-    height: 34px;
-    padding: 6px 10px;
+.linha-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}   
+
+.linha-tripla {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+
+input[type="text"], 
+input[type="date"], 
+input[type="tel"] {
+    width: 100%;
+    height: 42px;
+    padding: 10px;
     border-radius: 8px;
-    border: 2px solid #bfc6ea;
-    background: linear-gradient(180deg, #ffffff, #f1f3ff);
+    border: 1px solid #bfc6ea;
+    background-color: #fff;
+    font-size: 1rem;
 }
 
-/* BOTÃO PROSSEGUIR */
-.botao-prosseguir { text-align: center; margin-top: 20px; }
+/* =========================================
+   AJUSTE PARA CELULAR (SOLUÇÃO FINAL)
+   ========================================= */
+@media (max-width: 768px) {
+    .box {
+        margin: 20px auto;
+        width: 95%;
+        padding: 15px;
+    }
+
+    .top-banner {
+        min-height: 180px;
+    }
+
+    .titulo-geral h2 {
+        font-size: 1.5rem;
+    }
+
+    .course-module {
+        grid-template-columns: 1fr 90px;
+        /* Ajusta espaço para imagem menor no celular */
+        gap: 10px;
+    }
+
+    .module-image img {
+        max-width: 150px;
+        margin-right: 150px;
+    }
+
+    .lista-duas-colunas {
+        grid-template-columns: 1fr;
+    }
+
+    .linha.dupla,
+    .linha.tripla {
+        grid-template-columns: 1fr;
+    }
+
+    .botao-prosseguir a {
+        width: 100%;
+        padding: 15px 10px;
+    }
+
+
+}
+
+.botao-prosseguir {
+    margin: 25px 0;
+    text-align: center;
+}
+
 .botao-prosseguir a {
     display: inline-block;
     background: linear-gradient(180deg, #2ecc71, #1fa75a);
     color: #fff;
     text-decoration: none;
-    padding: 14px 30px;
+    padding: 16px 40px;
     border-radius: 12px;
+    font-size: 1.2rem;
     font-weight: bold;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* --- RESPONSIVIDADE (MOBILE) --- */
-@media (max-width: 768px) {
-    .titulo-geral {
-        padding: 40px 20px 80px 20px;
-    }
-
-    .box {
-        max-width: 95%;
-        margin: -60px auto 40px; 
-        padding: 15px;
-    }
-
-    .curso-card {
-        flex-direction: column; 
-        gap: 20px;
-    }
-
-    .painel-curso {
-        width: 100%; 
-    }
-
-    .lista-duas-colunas {
-        grid-template-columns: 1fr; 
-    }
-
-    .img-painel {
-        position: relative; /* No celular, ela segue o fluxo para não cobrir texto importante */
-        bottom: 0;
-        right: 0;
-        margin: 10px auto;
-        width: 100px;
-    }
-
-    .linha.dupla, .linha.tripla {
-        grid-template-columns: 1fr;
-    }
+.security {
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    font-size: 0.85rem;
 }

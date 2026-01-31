@@ -1,56 +1,95 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const dias = document.querySelectorAll(".dia");
+    // --- MÁSCARAS DE INPUT ---
+    const cpfInput = document.querySelector('input[placeholder="---.---.--- --"]');
+    const telInputs = document.querySelectorAll('input[type="tel"]');
 
-    const periodoManha = document.querySelector(".lbl-manha");
-    const periodoTarde = document.querySelector(".lbl-tarde");
-    const periodoNoite = document.querySelector(".lbl-noite");
+    if (cpfInput) {
+        cpfInput.addEventListener('input', (e) => {
+            let v = e.target.value.replace(/\D/g, "");
+            if (v.length > 11) v = v.slice(0, 11);
+            v = v.replace(/(\d{3})(\d)/, "$1.$2").replace(/(\d{3})(\d)/, "$1.$2").replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+            e.target.value = v;
+        });
+    }
 
-    const chkManha = document.getElementById("periodo-manha");
-    const chkTarde = document.getElementById("periodo-tarde");
-    const chkNoite = document.getElementById("periodo-noite");
+    telInputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            let v = e.target.value.replace(/\D/g, "");
+            if (v.length > 11) v = v.slice(0, 11);
+            v = v.replace(/^(\d{2})(\d)/g, "($1) $2").replace(/(\d)(\d{4})$/, "$1-$2");
+            e.target.value = v;
+        });
+    });
 
-    function atualizarPeriodos() {
-        let marcouSabado = false;
-        let marcouSemana = false;
+    // --- LÓGICA DE SELEÇÃO DE DIAS E PERÍODOS ---
+    const chkDias = document.querySelectorAll('.dias input[type="checkbox"]');
+    const chkPeriodos = document.querySelectorAll('.periodo input[type="checkbox"]');
+    
+    const labelManha = document.querySelector('.periodo label:nth-of-type(1)');
+    const labelNoite = document.querySelector('.periodo label:nth-of-type(3)');
 
-        dias.forEach(dia => {
+    function atualizarRegras() {
+        let diaSelecionado = "";
+
+        chkDias.forEach(dia => {
             if (dia.checked) {
-                if (dia.value === "sab") {
-                    marcouSabado = true;
-                } else {
-                    marcouSemana = true;
-                }
+                diaSelecionado = dia.parentElement.textContent.trim().toLowerCase();
             }
         });
 
-        if (marcouSabado) {
-            periodoManha.style.display = "flex";
-            periodoNoite.style.display = "none";
-            chkNoite.checked = false;
-        } 
-        else if (marcouSemana) {
-            periodoManha.style.display = "none";
-            periodoNoite.style.display = "flex";
-            chkManha.checked = false;
-        } 
-        else {
-            periodoManha.style.display = "flex";
-            periodoNoite.style.display = "flex";
+        // Resetar estados visuais
+        [labelManha, labelNoite].forEach(lbl => {
+            if (lbl) {
+                lbl.style.opacity = "1";
+                lbl.style.pointerEvents = "auto";
+                lbl.querySelector('input').disabled = false;
+            }
+        });
+
+        if (diaSelecionado !== "") {
+            // Regra para Sábado: Apaga NOITE
+            if (diaSelecionado.includes("sab")) {
+                if (labelNoite) {
+                    labelNoite.style.opacity = "0.3";
+                    labelNoite.style.pointerEvents = "none";
+                    const inputNoite = labelNoite.querySelector('input');
+                    inputNoite.checked = false;
+                    inputNoite.disabled = true;
+                }
+            } 
+            // Regra para dias de semana: Apaga MANHÃ
+            else {
+                if (labelManha) {
+                    labelManha.style.opacity = "0.3";
+                    labelManha.style.pointerEvents = "none";
+                    const inputManha = labelManha.querySelector('input');
+                    inputManha.checked = false;
+                    inputManha.disabled = true;
+                }
+            }
         }
     }
 
-    // 👉 Só um período pode ser marcado
-    function somenteUmPeriodo(marcado) {
-        [chkManha, chkTarde, chkNoite].forEach(chk => {
-            if (chk !== marcado) chk.checked = false;
+    // Regra: Só pode marcar UM DIA por vez
+    chkDias.forEach(chk => {
+        chk.addEventListener('change', () => {
+            if (chk.checked) {
+                chkDias.forEach(outro => {
+                    if (outro !== chk) outro.checked = false;
+                });
+            }
+            atualizarRegras();
         });
-    }
-
-    dias.forEach(dia => {
-        dia.addEventListener("change", atualizarPeriodos);
     });
 
-    chkManha.addEventListener("change", () => somenteUmPeriodo(chkManha));
-    chkTarde.addEventListener("change", () => somenteUmPeriodo(chkTarde));
-    chkNoite.addEventListener("change", () => somenteUmPeriodo(chkNoite));
+    // Regra: Só pode marcar UM PERÍODO por vez
+    chkPeriodos.forEach(chk => {
+        chk.addEventListener('change', () => {
+            if (chk.checked) {
+                chkPeriodos.forEach(outro => {
+                    if (outro !== chk) outro.checked = false;
+                });
+            }
+        });
+    });
 });
