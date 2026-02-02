@@ -273,10 +273,12 @@ h1 {
 
 .security {
     text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    font-size: 0.85rem;
 }
+
 
 
 

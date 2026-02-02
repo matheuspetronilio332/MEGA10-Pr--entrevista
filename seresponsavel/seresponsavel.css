@@ -572,8 +572,12 @@ label{
 
 .security {
     text-align: center;
-    font-size: 1.2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    font-size: 0.85rem;
 }
+
 
 /* ==========================
    RESPONSIVIDADE GERAL
@@ -717,20 +721,3 @@ label{
         background-image: url("imagen/banner-2.0.2-mobile.jpeg");
     }
 }
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-
-
-
-
-
-
-=======
->>>>>>> dev
-=======
->>>>>>> dev
-=======
->>>>>>> dev
