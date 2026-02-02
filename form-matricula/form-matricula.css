@@ -65,6 +65,13 @@ body {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
+.proximo-passo {
+    text-align: center;
+    font-size: 1.4  rem;
+    color: #555;
+    margin: 30px;
+}
+
 .box-cabeçalho {
     text-align: center;
     margin-bottom: 25px;
@@ -231,7 +238,7 @@ input[type="tel"] {
 }
 
 /* =========================================
-   AJUSTE PARA CELULAR (SOLUÇÃO FINAL)
+   AJUSTE PARA CELULAR
    ========================================= */
 @media (max-width: 768px) {
     .box {
@@ -256,7 +263,7 @@ input[type="tel"] {
 
     .module-image img {
         max-width: 150px;
-        margin-right: 110px;
+        margin-right: 30%;
     }
 
     .lista-duas-colunas {
@@ -287,7 +294,7 @@ input[type="tel"] {
     text-decoration: none;
     padding: 16px 40px;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: bold;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
