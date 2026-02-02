@@ -10,6 +10,7 @@
     --blue-header: #2b59c3;
     --blue-gradient: linear-gradient(180deg, #3c6fd1, #274fa8);
     --white: #ffffff;
+    --destaque:#ffcc00;
 }
 
 body {
@@ -78,7 +79,10 @@ body {
     height: 10px;
     background: #0004d5;
     border-radius: 5px;
+
 }
+
+
 
 
 
@@ -96,20 +100,43 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
+.section h3 {
+    font-size: 1rem;
+    color: #625f5fac;
+    margin-bottom: 10px;
+}
+
 .header {
     display: flex;
+    justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #bdc3f7;
-    padding-bottom: 8px;
+    padding: 8px;
     margin-bottom: 10px;
-
+    background: var(--blue-gradient);
+    border-radius: 12px 12px 0px 0px;
+    margin-top: -16px;
+    margin-left: -16px;
+    margin-right: -16px;
 }
 
 .header h2 {
-    font-size: 1.1rem;
-    color: #1a237e;
-    margin: 0;
+    font-size: 1.2rem;
+    color: white;
 }
+
+
+
+.periodo img {
+    width: 60px;
+    margin: 5px;
+}
+
+.periodo {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
 
 .icon {
     margin-right: 10px;
@@ -120,6 +147,10 @@ body {
     font-size: 0.95rem;
     line-height: 1.4;
     margin: 5px 0;
+}
+
+.content strong {
+    font-weight: 800;
 }
 
 /* Estilo de Preços e Opções */
@@ -144,7 +175,7 @@ body {
 }
 
 .tip {
-    font-size: 0.85rem !important;
+    font-size: 0.98rem !important;
     color: #555;
 }
 
@@ -187,8 +218,12 @@ body {
 
 
 
-
-
+.footer-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #696868c4;
+    margin-top: 15px;
+}
 
 
 
