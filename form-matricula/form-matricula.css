@@ -249,6 +249,9 @@ input[type="tel"] {
 
     .top-banner {
         min-height: 180px;
+        height: 320px;
+        background-image: url("imagen/banner-2.0.2-mobile.jpeg");
+    
     }
 
     .titulo-geral h2 {
@@ -307,7 +310,10 @@ input[type="tel"] {
     font-size: 0.85rem;
 }
 
-
+/* banner mobile */
+@media (max-width: 768px) {
+    
+}
 
 
 
