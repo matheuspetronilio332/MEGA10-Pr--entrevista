@@ -10,6 +10,8 @@
     font-family: Arial, sans-serif;
 }
 
+
+
 :root {
     --box-color: #5891d633;
     --blue-header: #2b59c3;
@@ -21,6 +23,17 @@ body {
     min-height: 100vh;
     background-color: #fff;
     user-select: none;
+}
+
+
+.divider-geral {
+    background: linear-gradient(#c0bdbd28, #736F6F, #adaaaa26);
+    height: 2px;
+    margin: 10px 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: #555 0px 0px 2px;
 }
 
 /* =========================================
