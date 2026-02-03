@@ -13,6 +13,14 @@ body {
     user-select: none;
 }
 
+html, body {
+    max-width: 100vw; /* Garante que a largura máxima seja a da janela */
+    overflow-x: hidden; /* Corta qualquer conteúdo que escape lateralmente */
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
 
 
 /* TOPO */
@@ -20,6 +28,7 @@ body {
 
 .top-banner {
     width: 100%;
+    max-width: 100vw;
     height: 450px;
     background-image: url("Imagens/banner-2.0.png");
     background-size: cover;
@@ -268,13 +277,19 @@ h1 {
     }
 }
 
+.box, .box-main, .container {
+    width: 92%; /* Deixa uma margem de respiro nas laterais */
+    max-width: 750px; /* Não cresce além disso no desktop */
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .carrocel {
     margin: 0 auto;
-    width: 600px;
-    height: 600px;
-    overflow: hidden;
-    
+    width: 100%; /* No mobile, deve ser 100% ou 100vw */
+    max-width: 600px; /* Limite do desktop */
+    overflow: hidden; /* OBRIGATÓRIO: Esconde os outros 3 slides que estão fora da tela */
 }
 
 .slides {
@@ -295,9 +310,9 @@ h1 {
     transition: 2s;
 }
 
-.slide img {
-    width: 600px;
-
+img {
+    max-width: 100%; /* Impede que qualquer imagem fique maior que o elemento pai */
+    height: auto;
 }
 
 .manual-navigation {
