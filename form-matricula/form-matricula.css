@@ -27,7 +27,7 @@ body {
 
 
 .divider-geral {
-    background: linear-gradient(#c0bdbd28, #736F6F, #adaaaa26);
+    background: linear-gradient(#c0bdbd28, #736F6F, #adaaaa4f);
     height: 2px;
     margin: 10px 0;
     width: 90%;
@@ -219,12 +219,14 @@ body {
     width: 100%;
 }
 
-.linha-dupla {
+/* Nova regra para manter lado a lado sempre */
+.linha-dupla-fixa {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr !important; /* Força 2 colunas */
     gap: 15px;
     margin-bottom: 15px;
-}   
+    width: 100%;
+}
 
 .linha-tripla {
     display: grid;
@@ -282,18 +284,19 @@ input[type="tel"] {
         margin-right: 30%;
     }
 
-    .lista-duas-colunas {
-        grid-template-columns: 1fr;
-    }
-
-    .linha.dupla,
-    .linha.tripla {
-        grid-template-columns: 1fr;
-    }
+    
 
     .botao-prosseguir a {
         width: 100%;
         padding: 15px 10px;
+    }
+    .linha-dupla-fixa {
+        gap: 8px; /* Reduz um pouco o espaço entre os campos no celular */
+    }
+    
+    .linha-dupla-fixa label {
+        font-size: 0.85rem; /* Diminui um pouco a letra do label para não quebrar linha */
+        white-space: nowrap; /* Impede que o texto do label pule linha */
     }
 
 }

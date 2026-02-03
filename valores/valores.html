@@ -21,27 +21,34 @@
     </div>
 
     <main class="box-main">
-        
+
         <div class="container">
-        <div class="linha"></div>
+            <div class="linha"></div>
 
             <div class="section">
                 <div class="header">
                     <span class="icon">🕒</span>
                     <h2>Duração e carga horária</h2>
-                    
+
                 </div>
-                
+
                 <div class="content">
 
                     <div class="periodo">
-                        <img src="imagen/periodo-icon-removebg.png" alt="Duração do Curso">
-                        <p><strong><b>Duração:</b></strong> 12 meses <br> <strong><b>Carga horária:</b></strong>  120h</p>
+                        <img src="imagen/periodo-icon-3d-removebg.png" alt="Duração do Curso">
+
+                        <p style="margin-top: 15px;"><strong><b>Duração:</b></strong> 12 meses <br> <strong><b>Carga
+                                    horária:</b></strong> 120h</p>
                     </div>
 
-                    <p><strong style="color: #ec9909;">Importante:</strong> você não precisa concluir todo o curso para começar a aproveitar as
+                    <p><strong style="color: #ec9909;">Importante:</strong> você não precisa concluir todo o curso para
+                        começar a aproveitar as
                         <strong>oportunidades de emprego</strong>. Conforme for se preparando, já poderá ser
                         encaminhado.
+                    </p>
+                    <p class="curriculo">
+                        Matriculou, o currículo já muda. Com os cursos incluídos, as empresas passam a olhar o seu com
+                        muito mais interesse. 📝
                     </p>
                 </div>
             </div>
@@ -53,7 +60,9 @@
                 </div>
                 <div class="content">
                     <div class="option disabled">
-                        <input type="checkbox" disabled> <label for="" style="text-decoration: line-through; color: rgba(89, 87, 87, 0.703);">Valor normal: 12X de R$ 250,00</label>
+                        <input type="checkbox" disabled> <label for=""
+                            style="text-decoration: line-through; color: rgba(89, 87, 87, 0.703);">Valor normal: 12X de
+                            R$ 250,00</label>
                     </div>
                     <div class="option active">
                         <input type="checkbox" checked>
@@ -69,17 +78,62 @@
                     <span class="icon">📅</span>
                     <h2>Melhor Dia de Vencimento</h2>
                 </div>
-                <div class="content">
-                    <p>Qual o melhor dia para você?</p>
-                    <div class="days">
-                        <label><input type="checkbox" class="day-select" value="05" checked> Dia 05</label>
-                        <label><input type="checkbox" class="day-select" value="20"> Dia 20</label>
+
+
+                <div class="dia-forma-pagamento">
+                    <div class="content">
+                        <p>Qual o melhor dia para você?</p>
+                        <div class="days">
+                            <label><input type="checkbox" class="day-select" value="05" checked> Dia 05</label>
+                            <label><input type="checkbox" class="day-select" value="20"> Dia 20</label>
+                        </div>
+                        <p class="small">Você terá 5 dias de carência após o vencimento.</p>
                     </div>
-                    <p class="small">Você terá 5 dias de carência após o vencimento.</p>
+
+                    <div class="forma-pagamento">
+                        <p class="titulo-pagamento"><br>Forma de Pagamento:</p>
+
+                        <div class="pix-container">
+                            <p>Os pagamentos da mensalidade deverão ser pagos via PIX na data de vencimento que você escolher.</p>  
+                            <div class="pix-box">
+                                <input type="text" value="08147996000174" id="chave-pix" readonly>
+                                <button onclick="copiarPix()" class="btn-copiar-pix">
+                                    Copiar Chave
+                                </button>
+                            </div>
+                            <p class="pix-ajuda">Após copiar, abra o app do seu banco e cole a chave.</p>
+                        </div>
+
+                        <p>Você pode mandar o comprovante de pagamento nos seguintes números do WhatsApp: <br> <br> 📲(43) 9862-1641 <br> 📲(43) 9834-1067</p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="section-confirmation">
+                <div class="header-confirmation">
+
+                    <h2 style="margin-bottom: 20px;">Confirmação ✅</h2>
+                </div>
+                <div class="content">
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        Autorizo a <strong>MEGA10</strong> a entrar em contato pelo <strong>WhatsApp</strong>.
+                    </label>
+                    <p class="next-steps">
+                        Na próxima etapa você verá valores e formas de pagamento.
+                        Um de nossos consultores irá acompanhar sua matrícula.
+                    </p>
                 </div>
             </div>
 
-            <button class="btn-submit">
+
+
+            <button class="btn-submit" id="auth-check">
                 ENVIAR MATRÍCULA PARA ACEITAÇÃO <span>&gt;</span>
             </button>
             <p class="footer-text"> ⚠️ Os dados informados são usados exclusivamente pela nossa equipe.</p>

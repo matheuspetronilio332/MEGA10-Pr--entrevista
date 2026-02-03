@@ -37,3 +37,93 @@ document.addEventListener("DOMContentLoaded", () => {
     limitarSelecao(chkDias, aplicarRegras);
     limitarSelecao(chkPeriodos);
 });
+
+
+
+// mandar o form
+
+document.addEventListener('DOMContentLoaded', () => {
+    const linkProsseguir = document.getElementById('link-prosseguir');
+
+    if (linkProsseguir) {
+        linkProsseguir.addEventListener('click', () => {
+            // Capturar dias selecionados
+            const diasSelecionados = Array.from(document.querySelectorAll('input[name="dia"]:checked'))
+                .map(el => el.parentElement.textContent.trim());
+
+            // Capturar períodos selecionados
+            const periodosSelecionados = Array.from(document.querySelectorAll('input[name="periodo"]:checked'))
+                .map(el => el.parentElement.textContent.trim());
+
+            const fichaCompleta = {
+                responsavel: {
+                    nome: document.getElementById('resp-nome').value,
+                    cpf: document.getElementById('resp-cpf').value,
+                    nascimento: document.getElementById('resp-nasc').value,
+                    endereco: document.getElementById('resp-endereco').value,
+                    cidade: document.getElementById('resp-cidade').value,
+                    telefone: document.getElementById('resp-tel').value,
+                    foneRecado: document.getElementById('resp-recado-tel').value,
+                    nomeRecado: document.getElementById('resp-recado-nome').value
+                },
+                aluno: {
+                    nome: document.getElementById('aluno-nome').value,
+                    nascimento: document.getElementById('aluno-nasc').value,
+                    telefone: document.getElementById('aluno-tel').value,
+                    dias: diasSelecionados.join(', '),
+                    periodo: periodosSelecionados.join(', ')
+                },
+                data: new Date().toLocaleString('pt-BR')
+            };
+
+            localStorage.setItem('fichaMEGA10', JSON.stringify(fichaCompleta));
+        });
+    }
+});
+
+
+
+
+// envio
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Lógica de seleção de Dias e Períodos (já existente no seu código)
+    // ... suas regras de opacidade e limites de seleção ...
+
+    const linkProsseguir = document.querySelector('.botao-prosseguir a');
+
+    if (linkProsseguir) {
+        linkProsseguir.addEventListener('click', () => {
+            // Captura os dados marcados nos checkboxes
+            const diasSelecionados = Array.from(document.querySelectorAll('input[name="dia"]:checked'))
+                .map(el => el.parentElement.textContent.trim());
+
+            const periodosSelecionados = Array.from(document.querySelectorAll('input[name="periodo"]:checked'))
+                .map(el => el.parentElement.textContent.trim());
+
+            // Cria o objeto com os dados exatos do seu formulário
+            const fichaCompleta = {
+                responsavel: {
+                    nome: document.getElementById('resp-nome').value,
+                    cpf: document.getElementById('resp-cpf').value,
+                    nascimento: document.getElementById('resp-nasc').value,
+                    endereco: document.getElementById('resp-endereco').value,
+                    cidade: document.getElementById('resp-cidade').value,
+                    telefone: document.getElementById('resp-tel').value,
+                    foneRecado: document.getElementById('resp-recado-tel').value,
+                    nomeRecado: document.getElementById('resp-recado-nome').value
+                },
+                aluno: {
+                    nome: document.getElementById('aluno-nome').value,
+                    nascimento: document.getElementById('aluno-nasc').value,
+                    telefone: document.getElementById('aluno-tel').value,
+                    dias: diasSelecionados.join(', '),
+                    periodo: periodosSelecionados.join(', ')
+                },
+                data: new Date().toLocaleString('pt-BR')
+            };
+
+            // Salva na "ponte" entre páginas
+            localStorage.setItem('fichaMEGA10', JSON.stringify(fichaCompleta));
+        });
+    }
+});

@@ -127,8 +127,8 @@ body {
 
 
 .periodo img {
-    width: 60px;
-    margin: 5px;
+    width: 90px;
+    
 }
 
 .periodo {
@@ -136,6 +136,17 @@ body {
     justify-content: flex-start;
     margin-bottom: 10px;
 }
+
+
+.content .curriculo {
+    margin: 15px 0;
+    background: var(--blue-header);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+
 
 
 .icon {
@@ -209,8 +220,101 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+
+/* confirmação */
+
+.confirmation {
+    background: rgba(255, 255, 255, 0.5); /* Um pouco mais claro para destacar */
+}
+
+
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    margin-bottom: 15px;
+    color: #000000; /* Azul escuro combinando com os títulos */
+}
+
+.checkbox-container input {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.content .next-steps {
+    font-size: 1.3rem;
+    color: #272626c0;
+    line-height: 1.5;
+    margin-left: 32px; /* Alinha o texto abaixo do início da frase anterior */
+}
+
+/* Efeito visual no WhatsApp (opcional) */
+.checkbox-container strong:last-of-type {
+    color: #000000; /* Cor clássica do WhatsApp */
+} 
+
+
+
+
+
 .btn-submit:hover {
     filter: brightness(1.1);
+}
+
+
+
+/* pix */
+
+.pix-container {
+    background: var(--box-color);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px dashed #2b59c3;
+    margin: 20px 0;
+    text-align: center;
+   
+}
+
+.pix-box {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+#chave-pix {
+    flex: 1;
+    border: 1px solid #ccc;
+    background: #ffffff82;
+    cursor: default;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    color: #333;
+}
+
+.btn-copiar-pix {
+    background-color: #2b59c3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-copiar-pix:hover {
+    background-color: #1e3f91;
+}
+
+.pix-ajuda {
+    font-size: 0.85rem;
+    color: #666;
 }
 
 

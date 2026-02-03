@@ -8,7 +8,8 @@
     <title>Matrícula | MEGA10</title>
 </head>
 
-<body style="background-image: url('imagen/fundo-form-sejovem.jpeg'); background-size: cover; background-attachment: fixed;">
+<body
+    style="background-image: url('imagen/fundo-form-sejovem.jpeg'); background-size: cover; background-attachment: fixed;">
 
 
     <script src="form-matricula.js"></script>
@@ -21,7 +22,7 @@
         </h2>
     </div>
 
-    <div class="divider-geral"></div>
+
 
     <main class="box">
         <section class="box-cabeçalho">
@@ -58,7 +59,7 @@
                             Aqui seu filho aprende a usar o computador como as empresas usam de verdade. Ele ganha
                             prática para atuar em escritórios e lojas.
                         </p>
-                    </div>  
+                    </div>
 
 
                     <div class="divider"></div>
@@ -105,43 +106,53 @@
             <form class="form-responsavel">
                 <div class="linha">
                     <label>Nome completo:</label>
-                    <input type="text" class="input-grande">
+                    <input type="text" class="input-grande" id="resp-nome">
                 </div>
 
                 <div class="linha dupla">
                     <div>
                         <label>CPF:</label>
-                        <input type="text" placeholder="---.---.--- --">
+                        <input type="text" placeholder="---.---.--- --" id="resp-cpf">
                     </div>
                     <div>
                         <label>Data de nascimento:</label>
-                        <input type="date">
+                        <input type="date" id="resp-nasc">
                     </div>
                 </div>
                 <div class="linha">
                     <label>Endereço: Rua/Bairro</label>
-                    <input type="text">
+                    <input type="text" id="resp-endereco">
                 </div>
                 <div class="linha dupla">
                     <div>
                         <label>Cidade e Estado:</label>
-                        <input type="text">
+                        <input type="text" id="resp-cidade">
                     </div>
                     <div>
                         <label>Telefone:</label>
-                        <input type="tel" placeholder="(--) ----- ----">
+                        <input type="tel" id="resp-tel" placeholder="(--) ----- ----">
                     </div>
                 </div>
-                <div class="linha dupla">
-                    <div>
-                        <label>Fone recado e nome:</label>
-                        <input type="tel" placeholder="(--) ----- ----">
+                <div class="linha-dupla-fixa">
+                    <div class="campo">
+                        <label>Nome Cônjuge</label>
+                        <input type="text" id="resp-conjuge-nome" placeholder="Nome">
                     </div>
-                    <div>
-                        <label>&nbsp;</label>
-                        <input type="text" placeholder="Nome">
+                    <div class="campo">
+                        <label>Fone Cônjuge</label>
+                        <input type="tel" id="resp-conjuge-tel" placeholder="(--) ---- ----">
                     </div>
+                </div>
 
+                <div class="linha-dupla-fixa">
+                    <div class="campo">
+                        <label>Nome Recado</label>
+                        <input type="text" id="resp-recado-nome" placeholder="Nome">
+                    </div>
+                    <div class="campo">
+                        <label>Fone Recado:</label>
+                        <input type="tel" id="resp-recado-tel" placeholder="(--) ---- ----">
+                    </div>
                 </div>
             </form>
         </section>
@@ -151,37 +162,41 @@
                 <h1>Dados do Aluno</h1>
             </div>
             <form class="form-aluno">
-                <div class="linha tripla">
+                <div class="">
                     <div class="campo">
                         <label>Nome:</label>
-                        <input type="text" placeholder="Nome completo">
+                        <input type="text" id="aluno-nome" placeholder="Nome completo">
                     </div>
-                    <div class="campo">
-                        <label>Data de Nasc:</label>
-                        <input type="date">
+                    <div class="linha-dupla-fixa">
+                        <div class="campo">
+                            <label>Data de Nasc:</label>
+                            <input type="date" id="aluno-nasc">
+                        </div>
+                        <div class="campo">
+                            <label>Telefone:</label>
+                            <input type="tel" id="aluno-tel" placeholder="(--) ----- ----">
+                        </div>
                     </div>
-                    <div class="campo">
-                        <label>Telefone:</label>
-                        <input type="tel" placeholder="(--) ----- ----">
-                    </div>
+
                 </div>
+                
                 <p class="texto-info" style="font-size: 1.3rem;">Qual o melhor dia de estudos?</p>
                 <div class="dias">
 
-                    <label><input type="checkbox"> Seg.</label>
-                    <label><input type="checkbox"> Ter.</label>
-                    <label><input type="checkbox"> Qua.</label>
+                    <label><input type="checkbox" name="dia"> Seg.</label>
+                    <label><input type="checkbox" name="dia"> Ter.</label>
+                    <label><input type="checkbox" name="dia"> Qua.</label>
                     <br>
                     <br>
-                    <label><input type="checkbox"> Qui.</label>
-                    <label><input type="checkbox"> Sex.</label>
-                    <label><input type="checkbox"> Sab.</label>
+                    <label><input type="checkbox" name="dia"> Qui.</label>
+                    <label><input type="checkbox" name="dia"> Sex.</label>
+                    <label><input type="checkbox" name="dia"> Sab.</label>
                 </div>
                 <div class="periodo" style="margin-top: 45px; ">
                     <label for="" style="font-size: 1.3rem;">Periodo:</label> <br>
-                    <label><input type="checkbox"> Manhã</label>
-                    <label><input type="checkbox"> Tarde</label>
-                    <label><input type="checkbox"> Noite</label>
+                    <label><input type="checkbox" name="periodo"> Manhã</label>
+                    <label><input type="checkbox" name="periodo"> Tarde</label>
+                    <label><input type="checkbox" name="periodo"> Noite</label>
 
                 </div>
             </form>
