@@ -346,3 +346,71 @@ body {
         background-image: url("imagen/banner-2.0.2-mobile.jpeg");
     }
 }
+
+/* =========================================
+   RESPONSIVIDADE (Ajustes para Celular)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Ajuste do Banner */
+    .top-banner {
+        height: 200px;
+        background-image: url("imagen/banner-2.0.2-mobile.jpeg");
+    }
+
+    /* Ajuste da Caixa Principal */
+    .box-main {
+        margin-top: 20px;
+        padding: 20px 15px;
+        width: 95%;
+    }
+
+    .titulo-geral h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Ajuste do Investimento */
+    .price {
+        font-size: 1.5rem;
+    }
+
+    /* Ajuste do PIX (Lado a Lado no Mobile) */
+    .pix-box {
+        flex-direction: column; /* No celular, o botão fica embaixo do input para não apertar */
+        gap: 8px;
+    }
+
+    #chave-pix {
+        font-size: 1.1rem;
+        height: 45px;
+    }
+
+    .btn-copiar-pix {
+        width: 100%;
+        height: 45px;
+    }
+
+    /* Ajuste de textos de confirmação */
+    .content .next-steps {
+        font-size: 1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .checkbox-container {
+        font-size: 0.95rem;
+    }
+
+    /* Ajuste do botão principal */
+    .btn-submit {
+        font-size: 0.9rem;
+        padding: 18px 10px;
+    }
+}
+
+/* Ajuste específico para telas muito pequenas */
+@media (max-width: 480px) {
+    .days {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
