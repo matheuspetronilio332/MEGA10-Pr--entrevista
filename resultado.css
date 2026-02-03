@@ -357,14 +357,7 @@ img {
     margin-left: -75%;
 }
 
-.navigation-auto div{
-    border: 2px solid #20a6ff;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.4s;
-    user-select: none;
-}
+
 
 .navigation-auto {
     position: absolute;
