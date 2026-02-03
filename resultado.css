@@ -375,19 +375,19 @@ img {
 
 
 #radio1:checked ~ .navigation-auto .auto-btn1 {
-    background: #ffffff;
+    background: #ffffff00;
 }
 
 #radio2:checked ~ .navigation-auto .auto-btn2 {
-    background: #ffffff;
+     background: #ffffff00;;
 }
 
 #radio3:checked ~ .navigation-auto .auto-btn3 {
-    background: #ffffff;
+     background: #ffffff00;
 }
 
 #radio4:checked ~ .navigation-auto .auto-btn4 {
-    background: #ffffff;
+     background: #ffffff00;
 }
 
 
@@ -449,6 +449,7 @@ img {
     .navigation-auto {
         width: 100%;
         margin-top: -35px; /* Sobe os botões para ficarem dentro da imagem */
+        
     }
 
     .navigation-auto div {
