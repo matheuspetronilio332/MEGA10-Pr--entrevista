@@ -10,7 +10,7 @@
     --blue-header: #2b59c3;
     --blue-gradient: linear-gradient(180deg, #3c6fd1, #274fa8);
     --white: #ffffff;
-    --destaque:#ffcc00;
+    --destaque: #ffcc00;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
     width: 100%;
     height: 450px;
     background-image: url("imagen/banner-2.0.png");
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
@@ -97,7 +97,7 @@ body {
     border-radius: 12px;
     margin-bottom: 15px;
     padding: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .section h3 {
@@ -128,7 +128,7 @@ body {
 
 .periodo img {
     width: 90px;
-    
+
 }
 
 .periodo {
@@ -217,14 +217,15 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
 /* confirmação */
 
 .confirmation {
-    background: rgba(255, 255, 255, 0.5); /* Um pouco mais claro para destacar */
+    background: rgba(255, 255, 255, 0.5);
+    /* Um pouco mais claro para destacar */
 }
 
 
@@ -236,7 +237,8 @@ body {
     font-size: 1.05rem;
     cursor: pointer;
     margin-bottom: 15px;
-    color: #000000; /* Azul escuro combinando com os títulos */
+    color: #000000;
+    /* Azul escuro combinando com os títulos */
 }
 
 .checkbox-container input {
@@ -250,13 +252,15 @@ body {
     font-size: 1.3rem;
     color: #272626c0;
     line-height: 1.5;
-    margin-left: 32px; /* Alinha o texto abaixo do início da frase anterior */
+    margin-left: 32px;
+    /* Alinha o texto abaixo do início da frase anterior */
 }
 
 /* Efeito visual no WhatsApp (opcional) */
 .checkbox-container strong:last-of-type {
-    color: #000000; /* Cor clássica do WhatsApp */
-} 
+    color: #000000;
+    /* Cor clássica do WhatsApp */
+}
 
 
 
@@ -277,7 +281,7 @@ body {
     border: 1px dashed #2b59c3;
     margin: 20px 0;
     text-align: center;
-   
+
 }
 
 .pix-box {
@@ -333,16 +337,16 @@ body {
     flex-direction: column;
     gap: 10px;
     margin-top: 15px;
-    
+
 }
 
 /* Alinhamento de cada linha (Ícone + Número) */
 .zap-item {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: flex-start;
-    gap: 8px; 
-    width: 200px; 
+    gap: 8px;
+    width: 200px;
 }
 
 .zap-item img {
@@ -355,17 +359,32 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     color: #333;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 /* Responsividade para Mobile */
 @media (max-width: 768px) {
     .zap-item {
-        width: 180px; 
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        width: 200px;
     }
+
+    .zap-item img {
+        width: 25px;
+        height: 25px;
+        margin: 0;
+    }
+
     .zap-item span {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #333;
+        white-space: nowrap;
     }
+
 }
 
 
@@ -400,6 +419,7 @@ body {
    RESPONSIVIDADE (Ajustes para Celular)
    ========================================= */
 @media (max-width: 768px) {
+
     /* Ajuste do Banner */
     .top-banner {
         height: 200px;
@@ -424,7 +444,8 @@ body {
 
     /* Ajuste do PIX (Lado a Lado no Mobile) */
     .pix-box {
-        flex-direction: column; /* No celular, o botão fica embaixo do input para não apertar */
+        flex-direction: column;
+        /* No celular, o botão fica embaixo do input para não apertar */
         gap: 8px;
     }
 
