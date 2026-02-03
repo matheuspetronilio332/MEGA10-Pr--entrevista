@@ -86,21 +86,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // envio
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Lógica de seleção de Dias e Períodos (já existente no seu código)
-    // ... suas regras de opacidade e limites de seleção ...
+    // --- 1. REGRAS DE SELEÇÃO (DIA E PERÍODO) ---
+    const chkDias = document.querySelectorAll('.dias input[type="checkbox"]');
+    const chkPeriodos = document.querySelectorAll('.periodo input[type="checkbox"]');
 
+    const limitarSelecao = (grupo) => {
+        grupo.forEach(item => {
+            item.addEventListener('change', () => {
+                if (item.checked) {
+                    grupo.forEach(outro => { if (outro !== item) outro.checked = false; });
+                }
+            });
+        });
+    };
+
+    limitarSelecao(chkDias);
+    limitarSelecao(chkPeriodos);
+
+    // --- 2. CAPTURA E ENVIO DOS DADOS ---
     const linkProsseguir = document.querySelector('.botao-prosseguir a');
 
     if (linkProsseguir) {
-        linkProsseguir.addEventListener('click', () => {
-            // Captura os dados marcados nos checkboxes
-            const diasSelecionados = Array.from(document.querySelectorAll('input[name="dia"]:checked'))
-                .map(el => el.parentElement.textContent.trim());
+        linkProsseguir.addEventListener('click', (e) => {
+            // Captura os dias e períodos marcados
+            const diaSelecionado = Array.from(document.querySelectorAll('input[name="dia"]:checked'))
+                .map(el => el.parentElement.textContent.trim())[0] || "Não informado";
 
-            const periodosSelecionados = Array.from(document.querySelectorAll('input[name="periodo"]:checked'))
-                .map(el => el.parentElement.textContent.trim());
+            const periodoSelecionado = Array.from(document.querySelectorAll('input[name="periodo"]:checked'))
+                .map(el => el.parentElement.textContent.trim())[0] || "Não informado";
 
-            // Cria o objeto com os dados exatos do seu formulário
+            // Cria o objeto com TODOS os campos do seu novo HTML
             const fichaCompleta = {
                 responsavel: {
                     nome: document.getElementById('resp-nome').value,
@@ -109,20 +124,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     endereco: document.getElementById('resp-endereco').value,
                     cidade: document.getElementById('resp-cidade').value,
                     telefone: document.getElementById('resp-tel').value,
-                    foneRecado: document.getElementById('resp-recado-tel').value,
-                    nomeRecado: document.getElementById('resp-recado-nome').value
+                    nomeConjuge: document.getElementById('resp-conjuge-nome').value,
+                    foneConjuge: document.getElementById('resp-conjuge-tel').value,
+                    nomeRecado: document.getElementById('resp-recado-nome').value,
+                    foneRecado: document.getElementById('resp-recado-tel').value
                 },
                 aluno: {
                     nome: document.getElementById('aluno-nome').value,
                     nascimento: document.getElementById('aluno-nasc').value,
                     telefone: document.getElementById('aluno-tel').value,
-                    dias: diasSelecionados.join(', '),
-                    periodo: periodosSelecionados.join(', ')
+                    diaEstudo: diaSelecionado,
+                    periodo: periodoSelecionado
                 },
-                data: new Date().toLocaleString('pt-BR')
+                dataRegistro: new Date().toLocaleString('pt-BR')
             };
 
-            // Salva na "ponte" entre páginas
+            // Salva na memória do navegador para a próxima página ler
             localStorage.setItem('fichaMEGA10', JSON.stringify(fichaCompleta));
         });
     }

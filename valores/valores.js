@@ -104,36 +104,38 @@ function copiarPix() {
 
 // enviar 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Recupera os checkboxes de vencimento desta página
+    // 1. Lógica para garantir seleção única de vencimento (Dia 05 ou 20)
     const dayCheckboxes = document.querySelectorAll('.day-select');
-    const btnSubmit = document.getElementById('auth-check');
-
-    // Garante seleção única de vencimento (05 ou 20)
+    
     dayCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function() {
             if (this.checked) {
                 dayCheckboxes.forEach(other => { if (other !== this) other.checked = false; });
-            } else { this.checked = true; }
+            } else {
+                this.checked = true; // Mantém sempre um ativo
+            }
         });
     });
 
+    // 2. Lógica de Envio para o WhatsApp
+    const btnSubmit = document.getElementById('auth-check');
+
     if (btnSubmit) {
         btnSubmit.addEventListener('click', () => {
-            // A. Resgata a ficha salva na página form-matricula
+            // Resgata os dados salvos na página anterior
             const ficha = JSON.parse(localStorage.getItem('fichaMEGA10'));
 
             if (!ficha) {
-                alert("Por favor, preencha o formulário de matrícula primeiro.");
-                window.location.href = "../form-matricula/form-matricula.html";
+                alert("Dados da matrícula não encontrados. Por favor, volte e preencha o formulário.");
                 return;
             }
 
-            // B. Captura o vencimento escolhido (se necessário para o texto)
+            // Captura o dia de vencimento selecionado nesta página
             const vencimentoEscolhido = Array.from(dayCheckboxes).find(cb => cb.checked)?.value || "05";
 
-            const meuWhats = "5543998621641"; // SUBSTITUA PELO SEU NÚMERO COM DDD
+            const meuWhats = "554398621641"; // Seu número de recebimento
 
-            // C. Montagem do texto exatamente como você solicitou
+            // Montagem do texto exatamente como você solicitou, incluindo os novos campos
             const mensagem = 
 `*MATRÍCULA: ADMINISTRATIVO E INFORMÁTICA - EAD*
 
@@ -145,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 *Endereço:* ${ficha.responsavel.endereco}
 *Cidade:* ${ficha.responsavel.cidade}
 *Telefone:* ${ficha.responsavel.telefone}
-*Fone conj:* (Não informado)
+*Fone conj:* ${ficha.responsavel.foneConjuge} (${ficha.responsavel.nomeConjuge})
 *Fone Recado e nome:* ${ficha.responsavel.foneRecado} - ${ficha.responsavel.nomeRecado}
 
 *Dados do Aluno:*
@@ -168,13 +170,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 7) *Rescisão:* Em caso de desistência, 10% do valor restante
 
-8) *Aulas realizadas:* com Atendimento semanal, as ${ficha.aluno.dias}, no período da ${ficha.aluno.periodo.toLowerCase()}
+8) *Aulas realizadas:* Atendimento semanal, às ${ficha.aluno.diaEstudo}, no período da ${ficha.aluno.periodo.toLowerCase()}
 
 ✅ Para confirmar a matrícula, responda “SIM”.`;
 
-            // D. Envio formatado para a API do WhatsApp
+            // Abre o WhatsApp com a mensagem pronta
             const url = `https://api.whatsapp.com/send?phone=${meuWhats}&text=${encodeURIComponent(mensagem)}`;
             window.open(url, '_blank');
         });
     }
 });
+
+// 3. Função Global para copiar o PIX
+function copiarPix() {
+    const chavePix = document.getElementById('chave-pix');
+    
+    navigator.clipboard.writeText(chavePix.value).then(() => {
+        const btn = document.querySelector('.btn-copiar-pix');
+        const originalText = btn.innerText;
+        
+        btn.innerText = "✅ Copiado!";
+        btn.style.backgroundColor = "#2ecc71";
+
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.backgroundColor = "#2b59c3";
+        }, 3000);
+    }).catch(err => {
+        alert("Erro ao copiar chave PIX.");
+    });
+}
