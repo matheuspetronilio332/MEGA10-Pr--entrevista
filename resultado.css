@@ -411,3 +411,68 @@ h1 {
         max-width: 100%;
     }
 }
+
+
+
+/* =========================================
+   RESPONSIVIDADE DO CARROSSEL
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Ajusta o tamanho do contêiner principal */
+    .carrocel {
+        width: 100%;       /* Ocupa toda a largura disponível */
+        height: auto;      /* Deixa a altura ser definida pela imagem */
+        max-width: 450px;  /* Limita o tamanho máximo em celulares grandes */
+    }
+
+    /* Ajusta os slides e imagens */
+    .slides {
+        height: auto;      /* Ajusta altura proporcionalmente */
+    }
+
+    .slide img {
+        width: 100%;       /* A imagem se ajusta à largura do contêiner */
+        height: auto;      /* Mantém a proporção da imagem */
+    }
+
+    /* Ajusta o posicionamento da navegação automática (indicadores) */
+    .navigation-auto {
+        width: 100%;
+        margin-top: -35px; /* Sobe os botões para ficarem dentro da imagem */
+    }
+
+    .navigation-auto div {
+        padding: 4px;      /* Botões um pouco menores no celular */
+    }
+
+    .navigation-auto div:not(:last-child) {
+        margin-right: 20px; /* Reduz o espaço entre os botões */
+    }
+
+    /* Ajusta os botões manuais (label invisível por cima) */
+    .manual-navigation {
+        width: 100%;
+        margin-top: -35px; /* Alinha com a navegação auto */
+    }
+
+    .manual-btn {
+        padding: 4px;
+    }
+
+    .manual-btn:not(:last-child) {
+        margin-right: 20px;
+    }
+}
+
+/* Para celulares muito pequenos (iPhone SE, etc) */
+@media (max-width: 480px) {
+    .navigation-auto, .manual-navigation {
+        margin-top: -30px;
+    }
+    
+    .navigation-auto div:not(:last-child), 
+    .manual-btn:not(:last-child) {
+        margin-right: 15px;
+    }
+}
