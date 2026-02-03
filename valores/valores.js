@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // B. Captura o vencimento escolhido (se necessário para o texto)
             const vencimentoEscolhido = Array.from(dayCheckboxes).find(cb => cb.checked)?.value || "05";
 
-            const meuWhats = "5543998257979"; // SUBSTITUA PELO SEU NÚMERO COM DDD
+            const meuWhats = "5543998621641"; // SUBSTITUA PELO SEU NÚMERO COM DDD
 
             // C. Montagem do texto exatamente como você solicitou
             const mensagem = 
