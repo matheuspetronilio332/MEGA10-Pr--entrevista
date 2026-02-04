@@ -50,6 +50,13 @@ body {
     margin: 12px 0 18px;
 }
 
+.video-intro {
+    display: block;
+    margin: 20px auto 40px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
 .divider {
     height: 2px;
     background: linear-gradient(90deg, transparent, #ccc, transparent);
