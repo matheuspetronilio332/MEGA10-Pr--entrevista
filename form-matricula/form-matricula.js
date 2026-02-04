@@ -1,30 +1,66 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. REGRAS DE BLOQUEIO DE HORÁRIOS ---
     const chkDias = document.querySelectorAll('.dias input[type="checkbox"]');
     const chkPeriodos = document.querySelectorAll('.periodo input[type="checkbox"]');
     
-    // Seleciona os labels pela posição (1º Manhã, 3º Noite)
-    const labelManha = document.querySelector('.periodo label:nth-of-type(2)'); // O 1º é o texto "Período:"
+    // Seleciona os labels para aplicar o efeito visual de "apagado"
+    const labelManha = document.querySelector('.periodo label:nth-of-type(2)'); 
     const labelNoite = document.querySelector('.periodo label:nth-of-type(4)');
 
-    function aplicarRegras() {
+    function aplicarRegrasHorario() {
         let diaAtivo = "";
         chkDias.forEach(dia => { if(dia.checked) diaAtivo = dia.parentElement.innerText.toLowerCase(); });
 
-        // Reset
-        [labelManha, labelNoite].forEach(l => { if(l){ l.style.opacity="1"; l.querySelector('input').disabled=false; }});
+        // Resetar estados antes de aplicar a nova regra
+        [labelManha, labelNoite].forEach(l => { 
+            if(l) { 
+                l.style.opacity = "1"; 
+                l.querySelector('input').disabled = false; 
+            }
+        });
 
         if (diaAtivo.includes("sab")) {
+            // No Sábado: Bloqueia Noite
             labelNoite.style.opacity = "0.3";
             labelNoite.querySelector('input').disabled = true;
             labelNoite.querySelector('input').checked = false;
         } else if (diaAtivo !== "") {
+            // Meio de Semana: Bloqueia Manhã
             labelManha.style.opacity = "0.3";
             labelManha.querySelector('input').disabled = true;
             labelManha.querySelector('input').checked = false;
         }
     }
 
-    // Garante apenas um dia e um período
+    // --- 2. MÁSCARAS DE ENTRADA (CPF, TEL, DATA) ---
+    const aplicarMascara = (id, tipo) => {
+        const input = document.getElementById(id);
+        if (!input) return;
+        input.addEventListener('input', (e) => {
+            let v = e.target.value.replace(/\D/g, "");
+            if (tipo === 'cpf') {
+                v = v.replace(/(\d{3})(\d)/, "$1.$2").replace(/(\d{3})(\d)/, "$1.$2").replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+            } else if (tipo === 'tel') {
+                v = v.replace(/^(\d{2})(\d)/g, "($1) $2").replace(/(\d{5})(\d)/, "$1-$2");
+            } else if (tipo === 'data') {
+                if (v.length > 8) v = v.substring(0, 8);
+                if (v.length >= 5) v = v.replace(/^(\d{2})(\d{2})(\d{0,4}).*/, "$1/$2/$3");
+                else if (v.length >= 3) v = v.replace(/^(\d{2})(\d{0,2}).*/, "$1/$2");
+            }
+            e.target.value = v;
+        });
+    };
+
+    aplicarMascara('resp-cpf', 'cpf');
+    aplicarMascara('resp-nasc', 'data');
+    aplicarMascara('aluno-nasc', 'data');
+    aplicarMascara('resp-tel', 'tel');
+    aplicarMascara('resp-conjuge-tel', 'tel');
+    aplicarMascara('resp-recado-tel', 'tel');
+    aplicarMascara('aluno-tel', 'tel');
+
+    // --- 3. LIMITAR SELEÇÃO ÚNICA ---
     const limitarSelecao = (grupo, callback) => {
         grupo.forEach(item => {
             item.addEventListener('change', () => {
@@ -34,113 +70,56 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    limitarSelecao(chkDias, aplicarRegras);
-    limitarSelecao(chkPeriodos);
-});
-
-
-
-// mandar o form
-
-document.addEventListener('DOMContentLoaded', () => {
-    const linkProsseguir = document.getElementById('link-prosseguir');
-
-    if (linkProsseguir) {
-        linkProsseguir.addEventListener('click', () => {
-            // Capturar dias selecionados
-            const diasSelecionados = Array.from(document.querySelectorAll('input[name="dia"]:checked'))
-                .map(el => el.parentElement.textContent.trim());
-
-            // Capturar períodos selecionados
-            const periodosSelecionados = Array.from(document.querySelectorAll('input[name="periodo"]:checked'))
-                .map(el => el.parentElement.textContent.trim());
-
-            const fichaCompleta = {
-                responsavel: {
-                    nome: document.getElementById('resp-nome').value,
-                    cpf: document.getElementById('resp-cpf').value,
-                    nascimento: document.getElementById('resp-nasc').value,
-                    endereco: document.getElementById('resp-endereco').value,
-                    cidade: document.getElementById('resp-cidade').value,
-                    telefone: document.getElementById('resp-tel').value,
-                    foneRecado: document.getElementById('resp-recado-tel').value,
-                    nomeRecado: document.getElementById('resp-recado-nome').value
-                },
-                aluno: {
-                    nome: document.getElementById('aluno-nome').value,
-                    nascimento: document.getElementById('aluno-nasc').value,
-                    telefone: document.getElementById('aluno-tel').value,
-                    dias: diasSelecionados.join(', '),
-                    periodo: periodosSelecionados.join(', ')
-                },
-                data: new Date().toLocaleString('pt-BR')
-            };
-
-            localStorage.setItem('fichaMEGA10', JSON.stringify(fichaCompleta));
-        });
-    }
-});
-
-
-
-
-// envio
-document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. REGRAS DE SELEÇÃO (DIA E PERÍODO) ---
-    const chkDias = document.querySelectorAll('.dias input[type="checkbox"]');
-    const chkPeriodos = document.querySelectorAll('.periodo input[type="checkbox"]');
-
-    const limitarSelecao = (grupo) => {
-        grupo.forEach(item => {
-            item.addEventListener('change', () => {
-                if (item.checked) {
-                    grupo.forEach(outro => { if (outro !== item) outro.checked = false; });
-                }
-            });
-        });
-    };
-
-    limitarSelecao(chkDias);
+    limitarSelecao(chkDias, aplicarRegrasHorario);
     limitarSelecao(chkPeriodos);
 
-    // --- 2. CAPTURA E ENVIO DOS DADOS ---
+    // --- 4. VALIDAÇÃO FINAL E SALVAMENTO ---
     const linkProsseguir = document.querySelector('.botao-prosseguir a');
-
     if (linkProsseguir) {
         linkProsseguir.addEventListener('click', (e) => {
-            // Captura os dias e períodos marcados
-            const diaSelecionado = Array.from(document.querySelectorAll('input[name="dia"]:checked'))
-                .map(el => el.parentElement.textContent.trim())[0] || "Não informado";
+            const obrigatorios = ['resp-nome', 'resp-cpf', 'resp-nasc', 'resp-endereco', 'resp-cidade', 'resp-tel', 'aluno-nome', 'aluno-nasc', 'aluno-tel'];
+            let vazio = null;
 
-            const periodoSelecionado = Array.from(document.querySelectorAll('input[name="periodo"]:checked'))
-                .map(el => el.parentElement.textContent.trim())[0] || "Não informado";
+            for (let id of obrigatorios) {
+                const campo = document.getElementById(id);
+                if (campo.value.trim() === "") { vazio = campo; break; }
+            }
 
-            // Cria o objeto com TODOS os campos do seu novo HTML
-            const fichaCompleta = {
-                responsavel: {
-                    nome: document.getElementById('resp-nome').value,
-                    cpf: document.getElementById('resp-cpf').value,
-                    nascimento: document.getElementById('resp-nasc').value,
-                    endereco: document.getElementById('resp-endereco').value,
-                    cidade: document.getElementById('resp-cidade').value,
-                    telefone: document.getElementById('resp-tel').value,
-                    nomeConjuge: document.getElementById('resp-conjuge-nome').value,
-                    foneConjuge: document.getElementById('resp-conjuge-tel').value,
-                    nomeRecado: document.getElementById('resp-recado-nome').value,
-                    foneRecado: document.getElementById('resp-recado-tel').value
-                },
-                aluno: {
-                    nome: document.getElementById('aluno-nome').value,
-                    nascimento: document.getElementById('aluno-nasc').value,
-                    telefone: document.getElementById('aluno-tel').value,
-                    diaEstudo: diaSelecionado,
-                    periodo: periodoSelecionado
-                },
-                dataRegistro: new Date().toLocaleString('pt-BR')
-            };
+            const diaMarcado = document.querySelector('input[name="dia"]:checked');
+            const periodoMarcado = document.querySelector('input[name="periodo"]:checked');
 
-            // Salva na memória do navegador para a próxima página ler
-            localStorage.setItem('fichaMEGA10', JSON.stringify(fichaCompleta));
+            if (vazio) {
+                e.preventDefault();
+                alert(`Preencha o campo: ${vazio.previousElementSibling.innerText}`);
+                vazio.style.border = "2px solid red";
+                vazio.focus();
+            } else if (!diaMarcado || !periodoMarcado) {
+                e.preventDefault();
+                alert("Selecione o Dia e o Período de estudo.");
+            } else {
+                const ficha = {
+                    responsavel: {
+                        nome: document.getElementById('resp-nome').value,
+                        cpf: document.getElementById('resp-cpf').value,
+                        nascimento: document.getElementById('resp-nasc').value,
+                        endereco: document.getElementById('resp-endereco').value,
+                        cidade: document.getElementById('resp-cidade').value,
+                        telefone: document.getElementById('resp-tel').value,
+                        foneConjuge: document.getElementById('resp-conjuge-tel').value,
+                        nomeConjuge: document.getElementById('resp-conjuge-nome').value,
+                        foneRecado: document.getElementById('resp-recado-tel').value,
+                        nomeRecado: document.getElementById('resp-recado-nome').value
+                    },
+                    aluno: {
+                        nome: document.getElementById('aluno-nome').value,
+                        nascimento: document.getElementById('aluno-nasc').value,
+                        telefone: document.getElementById('aluno-tel').value,
+                        diaEstudo: diaMarcado.parentElement.textContent.trim(),
+                        periodo: periodoMarcado.parentElement.textContent.trim()
+                    }
+                };
+                localStorage.setItem('fichaMEGA10', JSON.stringify(ficha));
+            }
         });
     }
 });
